@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode;
 }
 
-const BG_COLOR = '#2d1836';
+const BG_COLOR = '#131313';
 
 export default function BackgroundNight({ children }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);

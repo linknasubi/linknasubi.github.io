@@ -1,6 +1,9 @@
 'use client';
 
 import React from 'react';
+import { ProfileIntroSection } from '../components/ProfileIntroSection';
+import { FeaturedWorksSection } from '../components/FeaturedWorkSection';
+
 
 type Lang = 'pt' | 'en';
 
@@ -8,150 +11,155 @@ interface DataScienceSectionProps {
   lang: Lang;
 }
 
-const dataScienceContent = {
-  pt: [
-    {
-      img: '/img/idev-ds.png',
-      alt: 'Modelo Estrela iDEV',
-      title: 'Data Solutions Architect – iDEV',
-      highlights: [
-        'Conduziu a transformação da base analítica da iDEV, projetando e implementando um modelo estrela escalável que centralizou dados fragmentados de produtos e comportamento.',
-        'Mapeou o ciclo de vida do cliente com eventos de churn de alto impacto, influenciando o redesenho de onboarding e estratégias de retenção.',
-        'Implementou pipelines de ingestão e transformação de dados em tempo real com infraestrutura baseada em Kubernetes.',
-        'Desenvolveu pipelines automatizados de detecção de anomalias com Python, Pandas e modelagem de séries temporais, reduzindo esforços manuais em mais de 60%.'
-      ]
-    },
-    {
-      img: '/img/serpro-ds.png',
-      alt: 'Dashboards SERPRO',
-      title: 'Data Scientist – SERPRO (Serviço Federal de Processamento de Dados)',
-      highlights: [
-        'Atuou no projeto GovShield, plataforma estratégica nacional voltada para segurança e inteligência de dados.',
-        'Otimizou pipelines de dados com Azure Synapse, SQL Server, Power BI e Power Query, garantindo consistência e alta disponibilidade.',
-        'Criou KPIs e dashboards interativos com Power BI e DAX para análise de chamadas e serviços em escala federal.',
-        'Desenvolveu modelos preditivos com Scikit-learn para antecipar padrões operacionais e gerar insights acionáveis.',
-        'Automatizou relatórios analíticos, reduzindo carga operacional e permitindo decisões em larga escala baseadas em dados.'
-      ]
-    },
-    {
-      img: '/img/cpp-classification.png',
-      alt: 'Classificação CPP',
-      title: 'ML Researcher – CPP Classification (LINC/UFPA)',
-      highlights: [
-        'Projetou e treinou redes neurais para prever bioatividade de peptídeos penetrantes de célula (CPPs) a partir de suas sequências.',
-        'Integrado modelo a uma aplicação web com inferência em tempo real, permitindo testes interativos por pesquisadores.',
-        'Engenharia de atributos biologicamente relevantes e comparação de algoritmos (MLP, Random Forest, SVM).',
-        'Publicação: [BChemRF-CPPred](http://comptools.linc.ufpa.br/BChemRF-CPPred)'
-      ]
-    },
-    {
-      img: '/img/rd-visualizacao.png',
-      alt: 'Visualização Dimensionality Reduction',
-      title: 'Research Assistant – Dimensionality Reduction (LINC/UFPA)',
-      highlights: [
-        'Desenvolveu framework interativo para visualização em tempo real de algoritmos como PCA, t-SNE e UMAP.',
-        'Permitiu a análise de dados biológicos e sintéticos complexos em 2D e 3D para usuários não técnicos.',
-        'Contribuiu com usabilidade e explorabilidade em software científico no laboratório de visualização de dados.',
-        'Plataforma: [comptools.linc.ufpa.br/RD](http://comptools.linc.ufpa.br/RD)'
-      ]
-    }
-  ],
-  en: [
-    {
-      img: '/img/idev-ds.png',
-      alt: 'iDEV Star Schema',
-      title: 'Data Solutions Architect – iDEV',
-      highlights: [
-        'Led the transformation of iDEV’s analytics foundation by designing and implementing a scalable star schema that centralized fragmented product and behavior data.',
-        'Mapped the customer lifecycle with high-impact churn events, influencing onboarding redesign and retention strategies.',
-        'Built real-time data ingestion and transformation pipelines using Kubernetes-based infrastructure.',
-        'Developed automated anomaly detection pipelines with Python, Pandas, and time series modeling, reducing manual effort by over 60%.'
-      ]
-    },
-    {
-      img: '/img/serpro-ds.png',
-      alt: 'SERPRO Dashboards',
-      title: 'Data Scientist – SERPRO (Federal Data Processing Service)',
-      highlights: [
-        'Worked on the GovShield project, a national strategic platform focused on data security and intelligence.',
-        'Optimized data pipelines using Azure Synapse, SQL Server, Power BI, and Power Query, ensuring consistency and high availability.',
-        'Created KPIs and interactive dashboards with Power BI and DAX for federal-scale call and service analysis.',
-        'Developed predictive models with Scikit-learn to anticipate operational patterns and generate actionable insights.',
-        'Automated analytical reports, reducing operational load and enabling large-scale data-driven decisions.'
-      ]
-    },
-    {
-      img: '/img/cpp-classification.png',
-      alt: 'CPP Classification',
-      title: 'ML Researcher – CPP Classification (LINC/UFPA)',
-      highlights: [
-        'Designed and trained neural networks to predict the bioactivity of cell-penetrating peptides (CPPs) from their sequences.',
-        'Integrated the model into a real-time web application, allowing researchers to test interactively.',
-        'Engineered biologically relevant features and compared algorithms (MLP, Random Forest, SVM).',
-        'Publication: [BChemRF-CPPred](http://comptools.linc.ufpa.br/BChemRF-CPPred)'
-      ]
-    },
-    {
-      img: '/img/rd-visualizacao.png',
-      alt: 'Dimensionality Reduction Visualization',
-      title: 'Research Assistant – Dimensionality Reduction (LINC/UFPA)',
-      highlights: [
-        'Developed an interactive framework for real-time visualization of algorithms such as PCA, t-SNE, and UMAP.',
-        'Enabled analysis of complex biological and synthetic data in 2D and 3D for non-technical users.',
-        'Contributed to usability and explorability in scientific software at the data visualization lab.',
-        'Platform: [comptools.linc.ufpa.br/RD](http://comptools.linc.ufpa.br/RD)'
-      ]
-    }
-  ]
+const timeline = [
+  {
+    img: "/img/timeline-idev.png",
+    alt: "iDEV",
+    year: "2024 - Atual",
+  },
+  {
+    img: "/img/timeline-serpro.png",
+    alt: "SERPRO",
+    year: "2023 - 2024",
+  },
+  {
+    img: "/img/timeline-linc.png",
+    alt: "LINC/UFPA",
+    year: "2022 - 2023",
+  },
+  {
+    img: "/img/timeline-ufpa.png",
+    alt: "UFPA",
+    year: "2019 - Atual",
+  },
+];
+
+// Separe as partes do texto que vão em cada local
+const aboutMePT = {
+  intro: (
+    <>
+      <h1 className="text-5xl md:text-6xl font-serif font-extralight leading-tight mb-4">Sobre mim</h1>
+      <p className="text-lg md:text-xl mb-4">
+        Cientista da Computação pela Universidade Federal do Pará, fundador e arquiteto de soluções na iDEV. Atuo há mais de 4 anos em projetos de análise de dados, machine learning e engenharia de software, desenvolvendo soluções para empresas públicas e privadas.
+      </p>
+    </>
+  ),
+  rest: (
+    <>
+      <p className="mb-4">
+        Já fui cientista de dados no SERPRO, onde trabalhei com inteligência de dados em larga escala, e pesquisador no LINC/UFPA, aplicando redes neurais e métodos de redução de dimensionalidade para problemas em biotecnologia e ciências da vida.
+      </p>
+      <p className="mb-4">
+        Tenho experiência prática em pipelines de dados, arquitetura cloud (Kubernetes, Azure), desenvolvimento backend (Node.js, Python) e visualização (Power BI, React). Foco em soluções que conectam a complexidade dos dados ao valor de negócio, com entregas robustas e documentação clara.
+      </p>
+      <p>
+        Atualmente, lidero a transformação analítica da iDEV, criando infraestruturas escaláveis, modelos de dados e automação inteligente para acelerar decisões baseadas em dados.
+      </p>
+    </>
+  )
 };
 
+const aboutMeEN = {
+  intro: (
+    <>
+      <h1 className="text-5xl md:text-6xl font-serif font-extralight leading-tight mb-4">About<br />Me</h1>
+      <p className="text-lg md:text-xl mb-4">
+        Computer Scientist from the Federal University of Pará, founder and solutions architect at iDEV. I have 4+ years of experience in data analysis, machine learning, and software engineering, building solutions for both public and private organizations.
+      </p>
+    </>
+  ),
+  rest: (
+    <>
+      <p className="mb-4">
+        Former data scientist at SERPRO, working with large-scale data intelligence, and researcher at LINC/UFPA, applying neural networks and dimensionality reduction methods to biotech and life sciences challenges.
+      </p>
+      <p className="mb-4">
+        Hands-on experience in data pipelines, cloud architecture (Kubernetes, Azure), backend development (Node.js, Python), and visualization (Power BI, React). I focus on solutions that bridge data complexity and business value, always delivering robust outcomes and clear documentation.
+      </p>
+      <p>
+        Currently leading analytics transformation at iDEV, building scalable infrastructures, data models, and intelligent automation to accelerate data-driven decisions.
+      </p>
+    </>
+  )
+};
+
+
+const featuredWorksPT = [
+  {
+    img: "/img/highlight-podoclin.png",
+    alt: "PodoClin - Gestão de Clínicas",
+    title: "PodoClin – Gestão de Clínicas de Podologia",
+    period: "2024 - Atual",
+    description: "Liderei a transformação da base analítica da iDEV, desenhando e implementando um modelo estrela escalável para centralizar dados fragmentados e criar a primeira arquitetura de BI da empresa. Estruturei workflows analíticos em ambiente Kubernetes, implementei pipelines de ingestão e detecção de anomalias em tempo real, e mapeei o ciclo de vida dos clientes, expondo pontos críticos de churn e otimizando o onboarding e retenção.",
+    stack: ["Node.js", "Next.js", "MongoDB", "Kubernetes", "Python", "Power BI"]
+  },
+  {
+    img: "/data_science/Logo_govshield.png",
+    alt: "GovShield SERPRO",
+    title: "GovShield – Plataforma de Inteligência de Dados (SERPRO)",
+    period: "2021 - 2023",
+    description: "Atuei como cientista de dados no projeto GovShield, mantendo e otimizando pipelines de dados críticos usando Azure Synapse, SQL Server, Power Query e Power BI. Criei e implantei dashboards e KPIs dinâmicos para monitoramento de operações federais, desenvolvi modelos preditivos em Python/Scikit-learn e automatizei relatórios analíticos para decisões em larga escala.",
+    stack: ["Python", "Power BI", "Azure Synapse", "SQL Server", "Scikit-learn"]
+  },
+  {
+    img: "/img/highlight-mlbio.png",
+    alt: "ML para Biotecnologia",
+    title: "Classificação de Peptídeos e Visualização de Dados (LINC/UFPA)",
+    period: "2020",
+    description: "Pesquisador em machine learning no LINC/UFPA: desenvolvi modelos de redes neurais para classificar peptídeos penetrantes de célula (CPPs) e integrei a inferência em tempo real a uma aplicação web pública para pesquisadores. Também criei um framework interativo para visualização de algoritmos de redução de dimensionalidade (PCA, t-SNE, UMAP), permitindo análise visual de dados biológicos complexos.",
+    stack: ["Python", "Scikit-learn", "Django", "React", "Power BI"]
+  },
+];
+
+const featuredWorksEN = [
+  {
+    img: "/img/highlight-podoclin.png",
+    alt: "PodoClin - Clinic Management",
+    title: "PodoClin – SaaS for Podiatry Clinics",
+    period: "2024 - Present",
+    description: "Spearheaded the transformation of iDEV’s analytics by designing and implementing a scalable star schema model, turning fragmented product and behavioral data into a centralized, query-efficient BI architecture. Engineered analytics workflows in a Kubernetes infrastructure, implemented real-time ingestion and anomaly detection pipelines, and mapped the customer lifecycle to expose churn points and optimize onboarding and retention.",
+    stack: ["Node.js", "Next.js", "MongoDB", "Kubernetes", "Python", "Power BI"]
+  },
+  {
+    img: "/data_science/Logo_govshield.png",
+    alt: "GovShield SERPRO",
+    title: "GovShield – Data Intelligence Platform (SERPRO)",
+    period: "2021 - 2023",
+    description: "Worked as a data scientist on the GovShield project, maintaining and optimizing critical data pipelines using Azure Synapse, SQL Server, Power Query, and Power BI. Created and deployed dynamic dashboards and KPIs for federal operations monitoring, developed predictive models in Python/Scikit-learn, and automated analytical reports for large-scale, data-driven decisions.",
+    stack: ["Python", "Power BI", "Azure Synapse", "SQL Server", "Scikit-learn"]
+  },
+  {
+    img: "/img/highlight-mlbio.png",
+    alt: "ML for Biotechnology",
+    title: "Peptide Classification & Data Visualization (LINC/UFPA)",
+    period: "2020",
+    description: "Researcher in machine learning at LINC/UFPA: developed neural network models to classify cell-penetrating peptides (CPPs) and integrated real-time inference into a public web app for researchers. Also created an interactive framework for dimensionality reduction algorithms (PCA, t-SNE, UMAP), enabling visual analysis of complex biological data.",
+    stack: ["Python", "Scikit-learn", "Django", "React", "Power BI"]
+  },
+];
+
 export default function DataScienceSection({ lang = 'pt' }: DataScienceSectionProps) {
-  const content = dataScienceContent[lang];
+  const textContent = lang === 'pt' ? aboutMePT : aboutMeEN;
+  const featuredWorks = lang === 'pt' ? featuredWorksPT : featuredWorksEN;
+  const introTitle = lang === 'pt' ? "Sobre mim" : "About Me";
+  const sectionTitle = lang === 'pt' ? "Trabalhos em Destaque" : "Featured Projects";
 
   return (
-    <div className="grid gap-6 sm:gap-8 grid-cols-1">
-      {content.map((item, idx) => (
-        <div
-          key={idx}
-          className="bg-white/90 rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-4 sm:gap-8 border border-blue-100 group hover:scale-[1.02] hover:shadow-2xl transition-all duration-300 w-full"
-        >
-          <div className="flex-1 flex items-center justify-center min-w-0">
-            <img
-              src={item.img}
-              alt={item.alt}
-              className="w-full max-w-[220px] h-40 sm:h-48 object-cover rounded-xl shadow-md border border-blue-200 bg-gray-50"
-              style={{ minWidth: 120 }}
-              loading="lazy"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
-            />
-          </div>
-          <div className="flex-[2] min-w-0">
-            <h2 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-2">{item.title}</h2>
-            <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-700">
-              {item.highlights.map((highlight, i) => {
-                if (highlight.startsWith('Publication:') || highlight.startsWith('Plataforma:')) {
-                  // Extract markdown link
-                  const match = highlight.match(/\[(.*?)\]\((.*?)\)/);
-                  if (match) {
-                    const [full, text, url] = match;
-                    const prefix = highlight.split(full)[0];
-                    return (
-                      <li key={i}>
-                        {prefix}
-                        <a href={url} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">{text}</a>
-                      </li>
-                    );
-                  }
-                  return <li key={i}>{highlight}</li>;
-                }
-                return <li key={i}>{highlight}</li>;
-              })}
-            </ul>
-          </div>
-        </div>
-      ))}
-    </div>
+    <>
+      {/* SEÇÃO DE INTRODUÇÃO */}
+      <ProfileIntroSection
+        intro={textContent.intro}
+        rest={textContent.rest}
+        profileImg="/profile_picture.png"
+        profileAlt="Gabriel Aragão"
+        timeline={timeline}
+      />
+
+      {/* SEÇÃO DE TRABALHOS EM DESTAQUE */}
+      <FeaturedWorksSection
+        title={sectionTitle}
+        works={featuredWorks}
+      />
+    </>
   );
 }

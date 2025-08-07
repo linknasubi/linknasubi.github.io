@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
-const repo = 'gabrielaragao.github.io';
 
 const nextConfig = {
   output: 'export',
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
+  distDir: 'docs',
   images: {
     unoptimized: true,
   },

@@ -141,7 +141,6 @@ const featuredWorksEN = [
 export default function DataScienceSection({ lang = 'pt' }: DataScienceSectionProps) {
   const textContent = lang === 'pt' ? aboutMePT : aboutMeEN;
   const featuredWorks = lang === 'pt' ? featuredWorksPT : featuredWorksEN;
-  const introTitle = lang === 'pt' ? "Sobre mim" : "About Me";
   const sectionTitle = lang === 'pt' ? "Trabalhos em Destaque" : "Featured Projects";
 
   return (

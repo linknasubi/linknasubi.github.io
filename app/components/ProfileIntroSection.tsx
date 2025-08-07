@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+
 
 interface TimelineItem {
   img: string;
@@ -33,12 +35,15 @@ export function ProfileIntroSection({
         </div>
         {/* Imagem (coluna direita) */}
         <div className="flex-1 flex items-center justify-center px-4 py-2 sm:px-8 sm:py-6 md:pr-14 md:pt-14">
-          <img
+            <Image
             src={profileImg}
             alt={profileAlt}
+            width={380} // ajuste para o maior valor usado (md:w-[380px])
+            height={350}
             className="rounded-3xl shadow-2xl object-cover w-40 h-40 sm:w-64 sm:h-60 md:w-[380px] md:h-[350px] max-w-full border-4 border-[#242227] mx-auto md:mx-0"
             style={{ background: "#222" }}
-          />
+            priority // profile geralmente é importante pro LCP
+            />
         </div>
       </div>
       {/* Texto detalhado abaixo */}
@@ -49,12 +54,15 @@ export function ProfileIntroSection({
       <div className="w-full flex flex-wrap justify-center gap-5 sm:gap-8 mt-4 pb-6">
         {timeline.map((item, i) => (
           <div key={i} className="flex flex-col items-center mb-2">
-            <img
-              src={item.img}
-              alt={item.alt}
-              className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-gray-100 border-2 border-gray-700 shadow"
-              style={{ objectFit: 'cover' }}
-            />
+                <Image
+                src={item.img}
+                alt={item.alt}
+                width={56}   // 14 * 4 (rem -> px, para garantir responsivo)
+                height={56}
+                className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-gray-100 border-2 border-gray-700 shadow"
+                style={{ objectFit: 'cover' }}
+                />
+
             <span className="mt-2 text-xs text-gray-400">{item.year}</span>
           </div>
         ))}

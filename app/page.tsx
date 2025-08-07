@@ -86,7 +86,7 @@ export default function HomePage() {
         ].map(({ key, icon, label }) => (
           <button
             key={key}
-            onClick={() => setSection(key as any)}
+            onClick={() => setSection(key as 'software' | 'data')}
             className={`px-3 py-2 sm:px-6 rounded-full text-sm sm:text-base font-semibold border transition-all duration-150
               ${section === key ? buttonActive : buttonInactive}
             `}

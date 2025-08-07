@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 interface FeaturedWork {
   img: string;
@@ -34,11 +35,14 @@ export function FeaturedWorksSection({ title, works }: FeaturedWorksSectionProps
           >
             {/* Imagem do projeto */}
             <div className="md:w-2/5 flex-shrink-0 flex items-center justify-center bg-[#23232b] p-5 md:p-8">
-              <img
+              <Image
                 src={work.img}
                 alt={work.alt}
+                width={340}
+                height={240}
                 className="rounded-xl w-full h-44 sm:h-56 md:h-60 object-cover shadow"
                 style={{ background: "#222", minWidth: 120, maxWidth: 340 }}
+                priority={i === 0} // Opcional: prioriza a primeira imagem para LCP
               />
             </div>
             {/* Texto do projeto */}

@@ -47,7 +47,7 @@ const aboutMePT = {
   rest: (
     <>
       <p className="mb-4">
-        Já fui cientista de dados no SERPRO, onde trabalhei com inteligência de dados em larga escala, e pesquisador no LINC/UFPA, aplicando redes neurais e métodos de redução de dimensionalidade para problemas em biotecnologia e ciências da vida.
+        Já fui cientista de dados no SERPRO, onde trabalhei com inteligência de dados em larga escala, e pesquisador no LINC/UFPA, aplicando redes neurais e métodos de redução de dimensionalidade para problemas em biotecnologia.
       </p>
       <p className="mb-4">
         Tenho experiência prática em pipelines de dados, arquitetura cloud (Kubernetes, Azure), desenvolvimento backend (Node.js, Python) e visualização (Power BI, React). Foco em soluções que conectam a complexidade dos dados ao valor de negócio, com entregas robustas e documentação clara.

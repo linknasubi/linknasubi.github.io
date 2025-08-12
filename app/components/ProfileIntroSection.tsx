@@ -54,15 +54,14 @@ export function ProfileIntroSection({
       <div className="w-full flex flex-wrap justify-center gap-5 sm:gap-8 mt-4 pb-6">
         {timeline.map((item, i) => (
           <div key={i} className="flex flex-col items-center mb-2">
-                <Image
-                src={item.img}
-                alt={item.alt}
-                width={56}   // 14 * 4 (rem -> px, para garantir responsivo)
-                height={56}
-                className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-gray-100 border-2 border-gray-700 shadow"
-                style={{ objectFit: 'cover' }}
-                />
-
+              <Image
+              src={item.img}
+              alt={item.alt}
+              width={56}
+              height={56}
+              className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-gray-100 border-2 border-gray-700 shadow"
+              style={{ objectFit: 'cover' }}
+              />
             <span className="mt-2 text-xs text-gray-400">{item.year}</span>
           </div>
         ))}

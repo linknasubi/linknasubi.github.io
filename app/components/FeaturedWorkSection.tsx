@@ -32,7 +32,34 @@ interface FeaturedWorksSectionProps {
   works: FeaturedWork[];
 }
 
-export function FeaturedWorksSection({ title, works }: FeaturedWorksSectionProps) {
+type Lang = 'pt' | 'en';
+
+const L: Record<Lang, Record<string, string>> = {
+  pt: {
+    seeMore: 'Ver mais',
+    seeLess: 'Ver menos',
+    studyPage: 'Página do estudo',
+    problem: 'Problema',
+    context: 'Contexto',
+    solution: 'Solução & Arquitetura',
+    tools: 'Ferramentas & Integrações',
+    testimonials: 'O que dizem nossos clientes',
+    caseSuffix: ' — Case',
+  },
+  en: {
+    seeMore: 'See more',
+    seeLess: 'See less',
+    studyPage: 'Case page',
+    problem: 'Problem',
+    context: 'Context',
+    solution: 'Solution & Architecture',
+    tools: 'Tools & Integrations',
+    testimonials: 'What our clients say',
+    caseSuffix: ' — Case',
+  },
+};
+
+export function FeaturedWorksSection({ title, works, lang = 'pt' }: FeaturedWorksSectionProps & { lang?: Lang }) {
   // controla quais índices estão expandidos
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
   const toggle = useCallback((idx: number) => {
@@ -97,13 +124,14 @@ export function FeaturedWorksSection({ title, works }: FeaturedWorksSectionProps
                 {/* Ações */}
                 {work.caseStudy && (
                   <div className="mt-4 flex gap-3">
+                    {/* Botões de ação: troque os textos fixos */}
                     <button
                       onClick={() => toggle(i)}
                       className="px-4 py-2 rounded-lg bg-yellow-300 text-gray-900 font-semibold hover:brightness-95 transition"
                       aria-expanded={expanded.has(i)}
                       aria-controls={`case-study-inline-${i}`}
                     >
-                      {expanded.has(i) ? 'Ver menos' : 'Ver mais'}
+                      {expanded.has(i) ? L[lang].seeLess : L[lang].seeMore}
                     </button>
 
                     {work.caseStudy.link && (
@@ -113,22 +141,25 @@ export function FeaturedWorksSection({ title, works }: FeaturedWorksSectionProps
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Página do estudo
+                        {L[lang].studyPage}
                       </a>
                     )}
+
                   </div>
                 )}
               </div>
             </article>
 
-            {/* Detalhe inline logo abaixo do respectivo card */}
-              {work.caseStudy && (
-                <CaseStudyInline
-                  id={`case-study-inline-${i}`}
-                  work={work as FeaturedWork & { caseStudy: CaseStudy }}
-                  expanded={expanded.has(i)}
-                />
-              )}
+          {/* Passar lang para o detalhe inline */}
+          {work.caseStudy && (
+            <CaseStudyInline
+              id={`case-study-inline-${i}`}
+              work={work as FeaturedWork & { caseStudy: CaseStudy }}
+              expanded={expanded.has(i)}
+              lang={lang}
+            />
+          )}
+
 
           </div>
         ))}
@@ -142,91 +173,84 @@ function CaseStudyInline({
   id,
   work,
   expanded,
-  variant = 'highlight', // 'highlight' | 'rail' | 'timeline' | 'cards'
+  variant = 'highlight',
+  lang = 'pt',
 }: {
   id: string;
   work: FeaturedWork & { caseStudy: CaseStudy };
   expanded: boolean;
   variant?: 'highlight' | 'rail' | 'timeline' | 'cards';
+  lang?: Lang;
 }) {
   const cs = work.caseStudy;
 
 const renderHighlight = () => (
-  <div className="space-y-8">
-    {/* Row 1: Problema | Contexto */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <section>
-        <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">Problema</h5>
-        <p className="text-zinc-200 mt-2">{cs.problem}</p>
-      </section>
-
-      
-    {cs.testimonial && (
-      <section>
-        <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">O que dizem nossos clientes</h5>
-        <blockquote className="mt-3 p-4 bg-[#0f1115] border border-zinc-700/70 rounded-lg italic text-zinc-300">
-          "{cs.testimonial.quote}"
-          <footer className="mt-2 text-sm text-yellow-300">— {cs.testimonial.author}</footer>
-        </blockquote>
-      </section>
-    )}
-
-
-      {cs.context && (
-        <section>
-          <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">Contexto</h5>
-          <p className="text-zinc-200 mt-2">{cs.context}</p>
-        </section>
-      )}
-    </div>
-
-    {/* Row 2: Solução (full width) */}
+<div className="space-y-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
     <section>
-      <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">Solução & Arquitetura</h5>
-      <p className="text-zinc-200 mt-2">{cs.solution}</p>
+      <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].problem}</h5>
+      <p className="text-zinc-200 mt-2">{cs.problem}</p>
     </section>
 
-    {/* Ferramentas */}
-    <section>
-      <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">Ferramentas & Integrações</h5>
-      <div className="mt-3 flex flex-wrap gap-2">
-        {cs.tools.map((t, i) => (
-          <span
-            key={i}
-            className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-    </section>
-
-
-
-    {/* CTA (opcional) */}
-    {cs.link && (
-      <div>
-        <a
-          href={cs.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition"
-        >
-          Ver mais
-        </a>
-      </div>
+    {cs.context && (
+      <section>
+        <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].context}</h5>
+        <p className="text-zinc-200 mt-2">{cs.context}</p>
+      </section>
     )}
   </div>
+
+  <section>
+    <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].solution}</h5>
+    <p className="text-zinc-200 mt-2">{cs.solution}</p>
+  </section>
+
+  <section>
+    <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].tools}</h5>
+    <div className="mt-3 flex flex-wrap gap-2">
+      {cs.tools.map((t, i) => (
+        <span key={i} className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded">
+          {t}
+        </span>
+      ))}
+    </div>
+  </section>
+
+  {cs.testimonial && (
+    <section>
+      <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].testimonials}</h5>
+      <blockquote className="mt-3 p-4 bg-[#0f1115] border border-zinc-700/70 rounded-lg italic text-zinc-300">
+        “{cs.testimonial.quote}”
+        <footer className="mt-2 text-sm text-yellow-300">— {cs.testimonial.author}</footer>
+      </blockquote>
+    </section>
+  )}
+
+  {cs.link && (
+    <div>
+      <a
+        href={cs.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition"
+      >
+        {L[lang].seeMore}
+      </a>
+    </div>
+  )}
+</div>
 );
 
 
   const renderRail = () => (
     <div className="space-y-8">
-      <RailNode title="Problema & Contexto" content={cs.problem} index={0} />
-      <RailNode title="Solução & Arquitetura" content={cs.solution} index={1} />
-      <RailTools tools={cs.tools} index={2} />
-      {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} />}
-      {cs.link && <CaseStudyLink link={cs.link} />}
+    <RailNode title={`${L[lang].problem} & ${L[lang].context}`} content={cs.problem} index={0} />
+    <RailNode title={L[lang].solution} content={cs.solution} index={1} />
+    <RailTools tools={cs.tools} index={2} lang={lang} />
+      {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} lang={lang} />}
+
+      {cs.link && <CaseStudyLink link={cs.link} lang={lang} />}
+
     </div>
   );
 
@@ -236,7 +260,8 @@ const renderHighlight = () => (
       <TimelineItem title="Solução & Arquitetura" content={cs.solution} />
       <TimelineTools tools={cs.tools} />
       {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} />}
-      {cs.link && <CaseStudyLink link={cs.link} />}
+      {cs.link && <CaseStudyLink link={cs.link} lang={lang} />}
+
     </ol>
   );
 
@@ -246,7 +271,8 @@ const renderHighlight = () => (
       <CardItem title="Solução & Arquitetura" content={cs.solution} />
       <CardTools tools={cs.tools} />
       {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} />}
-      {cs.link && <CaseStudyLink link={cs.link} />}
+      {cs.link && <CaseStudyLink link={cs.link} lang={lang} />}
+
     </div>
   );
 
@@ -265,9 +291,10 @@ const renderHighlight = () => (
           )}
           <div className={`p-6 ${expanded ? 'animate-[fadeSlideIn_420ms_ease-out]' : ''}`}>
             <div className="mb-5">
-              <h4 className="text-zinc-100 font-semibold tracking-tight">{work.title} — Case</h4>
+              <h4 className="text-zinc-100 font-semibold tracking-tight">
+                {work.title}{L[lang].caseSuffix}
+              </h4>
             </div>
-
             {variant === 'highlight' && renderHighlight()}
             {variant === 'rail' && renderRail()}
             {variant === 'timeline' && renderTimeline()}
@@ -292,13 +319,13 @@ const RailNode = ({ title, content, index }: { title: string; content: string; i
   </div>
 );
 
-const RailTools = ({ tools, index }: { tools: string[]; index: number }) => (
+const RailTools = ({ tools, index, lang = 'pt' }: { tools: string[]; index: number; lang?: Lang }) => (
   <div className="relative ml-10">
     <div
       className={`absolute -left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-yellow-300 shadow-[0_0_16px_2px_rgba(234,179,8,0.45)]`}
       style={{ animation: `pulse ${2.6 + index * 0.2}s ease-in-out infinite` }}
     />
-    <h5 className="text-yellow-300 font-semibold text-sm">Ferramentas & Integrações</h5>
+    <h5 className="text-yellow-300 font-semibold text-sm">{L[lang].tools}</h5>
     <div className="mt-2 flex flex-wrap gap-2">
       {tools.map((t, i) => (
         <span key={i} className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded">
@@ -309,7 +336,7 @@ const RailTools = ({ tools, index }: { tools: string[]; index: number }) => (
   </div>
 );
 
-const CaseStudyLink = ({ link }: { link: string }) => (
+const CaseStudyLink = ({ link, lang = 'pt' }: { link: string; lang?: Lang }) => (
   <div className="mt-2">
     <a
       href={link}
@@ -317,7 +344,7 @@ const CaseStudyLink = ({ link }: { link: string }) => (
       rel="noopener noreferrer"
       className="inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition"
     >
-      Ver mais
+      {L[lang].seeMore}
     </a>
   </div>
 );
@@ -331,10 +358,10 @@ const TimelineItem = ({ title, content }: { title: string; content: string }) =>
   </li>
 );
 
-const TimelineTools = ({ tools }: { tools: string[] }) => (
+const TimelineTools = ({ tools, lang = 'pt' }: { tools: string[]; lang?: Lang }) => (
   <li className="ml-4">
     <div className="absolute -left-[9px] w-4 h-4 bg-yellow-300 rounded-full border border-yellow-200"></div>
-    <h5 className="text-yellow-300 font-semibold">Ferramentas & Integrações</h5>
+    <h5 className="text-yellow-300 font-semibold">{L[lang].tools}</h5>
     <div className="mt-2 flex flex-wrap gap-2">
       {tools.map((t, i) => (
         <span key={i} className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded">
@@ -345,21 +372,17 @@ const TimelineTools = ({ tools }: { tools: string[] }) => (
   </li>
 );
 
-const TestimonialBlock = ({
-  testimonial,
-}: {
-  testimonial: NonNullable<CaseStudy['testimonial']>;
-}) => (
+
+const TestimonialBlock = ({ testimonial, lang = 'pt' }: { testimonial: NonNullable<CaseStudy['testimonial']>; lang?: Lang }) => (
   <section className="mt-2">
-    <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">O que dizem nossos clientes</h5>
+    <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].testimonials}</h5>
     <blockquote className="mt-3 p-4 bg-[#0f1115] border border-zinc-700/70 rounded-lg italic text-zinc-300">
       {testimonial.quote ? `“${testimonial.quote}”` : '“Excelente experiência e resultados além do esperado.”'}
-      <footer className="mt-2 text-sm text-yellow-300">
-        — {testimonial.author ?? 'Cliente'}
-      </footer>
+      <footer className="mt-2 text-sm text-yellow-300">— {testimonial.author ?? (lang === 'pt' ? 'Cliente' : 'Client')}</footer>
     </blockquote>
   </section>
 );
+
 
 
 

@@ -12,25 +12,28 @@ interface DataScienceSectionProps {
 }
 
 const timeline = [
+    {
+    img: "/software_engineer/linc-logo.png",
+    alt: "LINC/UFPA",
+    year: "2019 - 2020",
+  },
+
+    {
+    img: "/software_engineer/serpro.png",
+    alt: "SERPRO",
+    year: "2021 - 2023",
+  },
+
+    {
+    img: "/software_engineer/idev-logo.png",
+    alt: "iDEV",
+    year: "2023 - Atual",
+  },
+
   {
-    img: "/img/timeline-idev.png",
+    img: "/software_engineer/logo-podoclin.png",
     alt: "iDEV",
     year: "2024 - Atual",
-  },
-  {
-    img: "/img/timeline-serpro.png",
-    alt: "SERPRO",
-    year: "2023 - 2024",
-  },
-  {
-    img: "/img/timeline-linc.png",
-    alt: "LINC/UFPA",
-    year: "2022 - 2023",
-  },
-  {
-    img: "/img/timeline-ufpa.png",
-    alt: "UFPA",
-    year: "2019 - Atual",
   },
 ];
 
@@ -62,7 +65,7 @@ const aboutMePT = {
 const aboutMeEN = {
   intro: (
     <>
-      <h1 className="text-5xl md:text-6xl font-serif font-extralight leading-tight mb-4">About<br />Me</h1>
+      <h1 className="text-5xl md:text-6xl font-serif font-extralight leading-tight mb-4">About Me</h1>
       <p className="text-lg md:text-xl mb-4">
         Computer Scientist from the Federal University of Pará, founder and solutions architect at iDEV. I have 4+ years of experience in data analysis, machine learning, and software engineering, building solutions for both public and private organizations.
       </p>
@@ -82,34 +85,91 @@ const aboutMeEN = {
     </>
   )
 };
-
-
 const featuredWorksPT = [
   {
     img: "/img/highlight-podoclin.png",
     alt: "PodoClin - Gestão de Clínicas",
     title: "PodoClin – Gestão de Clínicas de Podologia",
     period: "2024 - Atual",
-    description: "Liderei a transformação da base analítica da iDEV, desenhando e implementando um modelo estrela escalável para centralizar dados fragmentados e criar a primeira arquitetura de BI da empresa. Estruturei workflows analíticos em ambiente Kubernetes, implementei pipelines de ingestão e detecção de anomalias em tempo real, e mapeei o ciclo de vida dos clientes, expondo pontos críticos de churn e otimizando o onboarding e retenção.",
-    stack: ["Node.js", "Next.js", "MongoDB", "Kubernetes", "Python", "Power BI"]
+    description:
+      "Liderei a transformação da base analítica da iDEV, desenhando e implementando um modelo estrela escalável para centralizar dados fragmentados e criar a primeira arquitetura de BI da empresa. Estruturei workflows analíticos em ambiente Kubernetes, implementei pipelines de ingestão e detecção de anomalias em tempo real, e mapeei o ciclo de vida dos clientes, expondo pontos críticos de churn e otimizando o onboarding e retenção.",
+    stack: ["Node.js", "Next.js", "MongoDB", "Kubernetes", "Python", "Power BI"],
+    caseStudy: {
+      problem:
+        "A iDEV precisava centralizar e estruturar dados dispersos de diferentes módulos do PodoClin para análise em larga escala e tomada de decisão estratégica.",
+      solution:
+        "Desenhei e implementei um modelo estrela escalável para consolidar dados fragmentados, criei pipelines em tempo real para ingestão e detecção de anomalias, e desenvolvi dashboards de BI no Power BI, reduzindo o tempo de análise e aumentando a precisão das métricas.",
+      tools: [
+        "Node.js",
+        "Next.js",
+        "MongoDB",
+        "Kubernetes",
+        "Python",
+        "Power BI",
+      ],
+      testimonial: {
+        quote:
+          "A performance melhorou muito! Dashboards abrem em segundos e novas APIs estão no ar em poucos dias.",
+        author: "João Pereira, CTO",
+      },
+    },
   },
   {
     img: "/data_science/Logo_govshield.png",
     alt: "GovShield SERPRO",
     title: "GovShield – Plataforma de Inteligência de Dados (SERPRO)",
     period: "2021 - 2023",
-    description: "Atuei como cientista de dados no projeto GovShield, mantendo e otimizando pipelines de dados críticos usando Azure Synapse, SQL Server, Power Query e Power BI. Criei e implantei dashboards e KPIs dinâmicos para monitoramento de operações federais, desenvolvi modelos preditivos em Python/Scikit-learn e automatizei relatórios analíticos para decisões em larga escala.",
-    stack: ["Python", "Power BI", "Azure Synapse", "SQL Server", "Scikit-learn"]
+    description:
+      "Atuei como cientista de dados no projeto GovShield, mantendo e otimizando pipelines de dados críticos usando Azure Synapse, SQL Server, Power Query e Power BI. Criei e implantei dashboards e KPIs dinâmicos para monitoramento de operações federais, desenvolvi modelos preditivos em Python/Scikit-learn e automatizei relatórios analíticos para decisões em larga escala.",
+    stack: [
+      "Python",
+      "Power BI",
+      "Azure Synapse",
+      "SQL Server",
+      "Scikit-learn",
+    ],
+    caseStudy: {
+      problem:
+        "O SERPRO precisava consolidar grandes volumes de dados governamentais e criar análises e predições para apoiar decisões estratégicas e operacionais.",
+      solution:
+        "Implementei pipelines robustos no Azure Synapse, automatizei ETLs, desenvolvi dashboards dinâmicos e criei modelos preditivos em Python para antecipar eventos críticos, aumentando a eficiência das operações federais.",
+      tools: [
+        "Python",
+        "Power BI",
+        "Azure Synapse",
+        "SQL Server",
+        "Scikit-learn",
+      ],
+      testimonial: {
+        quote:
+          "Profissional extremamente dedicado e competente, conhecimento muito acima da média.",
+        author: "Supervisor no SERPRO",
+      },
+    },
   },
   {
     img: "/img/highlight-mlbio.png",
     alt: "ML para Biotecnologia",
     title: "Classificação de Peptídeos e Visualização de Dados (LINC/UFPA)",
     period: "2020",
-    description: "Pesquisador em machine learning no LINC/UFPA: desenvolvi modelos de redes neurais para classificar peptídeos penetrantes de célula (CPPs) e integrei a inferência em tempo real a uma aplicação web pública para pesquisadores. Também criei um framework interativo para visualização de algoritmos de redução de dimensionalidade (PCA, t-SNE, UMAP), permitindo análise visual de dados biológicos complexos.",
-    stack: ["Python", "Scikit-learn", "Django", "React", "Power BI"]
+    description:
+      "Pesquisador em machine learning no LINC/UFPA: desenvolvi modelos de redes neurais para classificar peptídeos penetrantes de célula (CPPs) e integrei a inferência em tempo real a uma aplicação web pública para pesquisadores. Também criei um framework interativo para visualização de algoritmos de redução de dimensionalidade (PCA, t-SNE, UMAP), permitindo análise visual de dados biológicos complexos.",
+    stack: ["Python", "Scikit-learn", "Django", "React", "Power BI"],
+    caseStudy: {
+      problem:
+        "Pesquisadores precisavam de uma ferramenta prática para classificar CPPs e explorar visualmente dados biológicos de alta dimensionalidade.",
+      solution:
+        "Desenvolvi modelos de redes neurais para classificação de CPPs e integrei a inferência em tempo real em uma aplicação web. Criei também um framework para visualização interativa usando PCA, t-SNE e UMAP, facilitando a análise exploratória de dados.",
+      tools: ["Python", "Scikit-learn", "Django", "React", "Power BI"],
+      testimonial: {
+        quote:
+          "O desenvolvimento foi essencial para a publicação dos nossos artigos!",
+        author: "Pesquisadores do LINC",
+      },
+    },
   },
 ];
+
 
 const featuredWorksEN = [
   {
@@ -139,22 +199,20 @@ const featuredWorksEN = [
 ];
 
 export default function DataScienceSection({ lang = 'pt' }: DataScienceSectionProps) {
+  // use textos e featured works específicos de Data Science
   const textContent = lang === 'pt' ? aboutMePT : aboutMeEN;
   const featuredWorks = lang === 'pt' ? featuredWorksPT : featuredWorksEN;
   const sectionTitle = lang === 'pt' ? "Trabalhos em Destaque" : "Featured Projects";
 
   return (
     <>
-      {/* SEÇÃO DE INTRODUÇÃO */}
       <ProfileIntroSection
         intro={textContent.intro}
         rest={textContent.rest}
         profileImg="/profile_picture.png"
         profileAlt="Gabriel Aragão"
-        timeline={timeline}
+        timeline={timeline ?? timeline}  // se tiver uma timeline própria para DS, use timelineDS
       />
-
-      {/* SEÇÃO DE TRABALHOS EM DESTAQUE */}
       <FeaturedWorksSection
         title={sectionTitle}
         works={featuredWorks}

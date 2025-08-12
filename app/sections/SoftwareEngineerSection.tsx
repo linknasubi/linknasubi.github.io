@@ -11,25 +11,28 @@ interface SoftwareEngineerSectionProps {
 }
 
 const timeline = [
-  {
-    img: "/software-engineer/logo-podoclin.png",
-    alt: "iDEV",
-    year: "2024 - Atual",
-  },
-  {
-    img: "/software-engineer/serpro.png",
-    alt: "SERPRO",
-    year: "2021 - 2023",
-  },
-  {
-    img: "/software-engineer/linc-logo.png",
+    {
+    img: "/software_engineer/linc-logo.png",
     alt: "LINC/UFPA",
     year: "2019 - 2020",
   },
+
+    {
+    img: "/software_engineer/serpro.png",
+    alt: "SERPRO",
+    year: "2021 - 2023",
+  },
+
+    {
+    img: "/software_engineer/idev-logo.png",
+    alt: "iDEV",
+    year: "2023 - Atual",
+  },
+
   {
-    img: "/software-engineer/linc-logo.png",
-    alt: "UFPA",
-    year: "2019 - Atual",
+    img: "/software_engineer/logo-podoclin.png",
+    alt: "iDEV",
+    year: "2024 - Atual",
   },
 ];
 
@@ -92,9 +95,9 @@ const featuredWorksPT = [
     img: "/software_engineer/logo-podoclin.png",
     alt: "PodoClin",
     title: "PodoClin – SaaS para Clínicas de Podologia",
-    period: "2022 - Atual",
+    period: "2024 - Atual",
     description:
-      "Criação, arquitetura e liderança técnica da plataforma SaaS multi-tenant, incluindo motor de formulários dinâmicos, geração de PDFs, integrações (WhatsApp, Mercado Pago), deploy Kubernetes e interfaces web/mobile responsivas.",
+      "Criação, arquitetura e liderança técnica da plataforma SaaS multi-tenant, incluindo motor de formulários dinâmicos, geração de PDFs, integrações (WhatsApp, Stripe), deploy Kubernetes e interfaces web/mobile responsivas.",
     stack: [
       "TypeScript",
       "Next.js",
@@ -108,7 +111,7 @@ const featuredWorksPT = [
       problem:
         "Clínicas de podologia enfrentavam dificuldades para gerenciar agendamentos, histórico clínico e comunicação com pacientes em uma única plataforma.",
       solution:
-        "Desenvolvemos um SaaS multi-tenant com formulários dinâmicos, geração automática de PDFs, integrações com WhatsApp e Mercado Pago, e deploy automatizado em Kubernetes.",
+        "Desenvolvemos um SaaS multi-tenant com formulários dinâmicos, geração automática de PDFs, integrações com WhatsApp e Stripe, e deploy automatizado em Kubernetes.",
       tools: [
         "Next.js",
         "Node.js",
@@ -120,8 +123,8 @@ const featuredWorksPT = [
       ],
       testimonial: {
         quote:
-          "O agendamento ficou muito mais ágil: o tempo médio caiu de 15 para 5 minutos e os erros mensais despencaram de 12 para 1.",
-        author: "Ana Souza, Podóloga"
+          "Um sistema excelente, nunca mais tive rinite alérgica depois que comecei a usar o Podoclin! Ótimo sistema de agendamento e prontuário.",
+        author: "Podólogas da Podoclin"
       },
     },
   },
@@ -129,7 +132,7 @@ const featuredWorksPT = [
   img: "/software_engineer/adv-mobile.png",
   alt: "Desenvolvimento de Sistemas Mobile",
   title: "Desenvolvimento Completo de Sistemas Mobile",
-  period: "2024",
+  period: "2023 - 2024",
   description:
     "Concepção e entrega de aplicativos mobile para Android e iOS utilizando frameworks multiplataforma, integrados a backends complexos, com sincronização de dados em tempo real e implantação multiambiente.",
   stack: [
@@ -154,8 +157,8 @@ const featuredWorksPT = [
       "GitHub Actions",
     ],
     testimonial: {
-      quote: "Depois de começarmos a usar o sistema, conseguimos reduzir drasticamente o tempo de atendimento e nossos clientes estão muito mais satisfeitos!",
-      author: "Ana Souza, Podóloga"
+      quote: "Aplicativo excelente! Está atendendo todas as necessidades do projeto.",
+      author: "Diretor de comissão da OAB"
     },
 
   },
@@ -183,8 +186,8 @@ const featuredWorksPT = [
         "Agile",
       ],
       testimonial: {
-        quote: "A performance melhorou muito! Dashboards abrem em segundos e novas APIs estão no ar em poucos dias.",
-        author: "João Pereira, CTO"
+        quote: "Profissional extremamente dedicado e competente, conhecimento muito acima da média.",
+        author: "Supervisor no SERPRO"
       },
     },
   },
@@ -192,7 +195,7 @@ const featuredWorksPT = [
     img: "/software_engineer/linc-logo.png",
     alt: "Backend Modular ML",
     title: "LINC/UFPA – Backend Modular e ML",
-    period: "2020",
+    period: "2019 - 2020",
     description:
       "Desenvolvimento de sistemas modulares Python (Flask/Django), integração com Java Spring Boot, deploy Dockerizado e pipelines para servir modelos de ML.",
     stack: [
@@ -220,8 +223,8 @@ const featuredWorksPT = [
       ],
       testimonial: {
         quote:
-          "Agora publicamos novos modelos em 3 dias (antes levava 2 semanas) e a compatibilidade entre linguagens passou de limitada para total.",
-        author: "João Pereira, CTO"
+          "O desenvolvimento foi essencial para a publicação dos nossos artigos!",
+        author: "Pesquisadores do LINC"
       },
 
     },
@@ -260,12 +263,12 @@ const featuredWorksEN = [
         "Docker",
         "GitHub Actions",
       ],
-      beforeAfter: {
-        metrics: [
-          { label: "Average booking time", before: "15 min", after: "5 min" },
-          { label: "Scheduling errors", before: "12/month", after: "1/month" },
-        ],
+      testimonial: {
+        quote:
+          "An excellent system — I never had allergic rhinitis again after I started using Podoclin! Great scheduling and medical record system.",
+        author: "Podiatrists at Podoclin"
       },
+
     },
   },
 {
@@ -296,12 +299,10 @@ const featuredWorksEN = [
       "Kubernetes",
       "GitHub Actions",
     ],
-    beforeAfter: {
-      metrics: [
-        { label: "Time to market for new features", before: "3 weeks", after: "5 days" },
-        { label: "Deployment failures", before: "5/month", after: "0/month" },
-      ],
-    },
+testimonial: {
+  quote: "Excellent app! It meets all the needs of the project.",
+  author: "Director of the OAB Commission"
+},
   },
 },
 
@@ -333,12 +334,10 @@ const featuredWorksEN = [
         "CI/CD",
         "Agile",
       ],
-      beforeAfter: {
-        metrics: [
-          { label: "Dashboard load time", before: "45s", after: "5s" },
-          { label: "New API provisioning time", before: "2 weeks", after: "3 days" },
-        ],
-      },
+testimonial: {
+  quote: "Extremely dedicated and competent professional, with knowledge far above average.",
+  author: "Supervisor at SERPRO"
+},
     },
   },
   {
@@ -371,12 +370,12 @@ const featuredWorksEN = [
         "Docker",
         "PostgreSQL",
       ],
-      beforeAfter: {
-        metrics: [
-          { label: "Time to deploy a new model", before: "2 weeks", after: "3 days" },
-          { label: "Cross-language compatibility", before: "Limited", after: "Full" },
-        ],
-      },
+
+testimonial: {
+  quote:
+    "The development was essential for the publication of our articles!",
+  author: "Researchers at LINC"
+},
     },
   },
 ];

@@ -1,11 +1,7 @@
 'use client';
-import { useEffect, useRef, ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 
-interface Props {
-  children: ReactNode;
-}
-
-export default function BackgroundDay({ children }: Props) {
+export default function BackgroundDay() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -52,12 +48,11 @@ export default function BackgroundDay({ children }: Props) {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div className="absolute inset-0 -z-10">
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 -z-10 w-full h-full"
+        className="absolute inset-0 w-full h-full"
       />
-      <div className="relative z-10">{children}</div>
     </div>
   );
 }

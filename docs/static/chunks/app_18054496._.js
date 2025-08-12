@@ -82,14 +82,14 @@ function ProfileIntroSection(param) {
                             }, void 0, false, {
                                 fileName: "[project]/app/components/ProfileIntroSection.tsx",
                                 lineNumber: 57,
-                                columnNumber: 17
+                                columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "mt-2 text-xs text-gray-400",
                                 children: item.year
                             }, void 0, false, {
                                 fileName: "[project]/app/components/ProfileIntroSection.tsx",
-                                lineNumber: 66,
+                                lineNumber: 65,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -135,8 +135,32 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+const L = {
+    pt: {
+        seeMore: 'Ver mais',
+        seeLess: 'Ver menos',
+        studyPage: 'Página do estudo',
+        problem: 'Problema',
+        context: 'Contexto',
+        solution: 'Solução & Arquitetura',
+        tools: 'Ferramentas & Integrações',
+        testimonials: 'O que dizem nossos clientes',
+        caseSuffix: ' — Case'
+    },
+    en: {
+        seeMore: 'See more',
+        seeLess: 'See less',
+        studyPage: 'Case page',
+        problem: 'Problem',
+        context: 'Context',
+        solution: 'Solution & Architecture',
+        tools: 'Tools & Integrations',
+        testimonials: 'What our clients say',
+        caseSuffix: ' — Case'
+    }
+};
 function FeaturedWorksSection(param) {
-    let { title, works } = param;
+    let { title, works, lang = 'pt' } = param;
     _s();
     // controla quais índices estão expandidos
     const [expanded, setExpanded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(new Set());
@@ -160,7 +184,7 @@ function FeaturedWorksSection(param) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 49,
+                lineNumber: 76,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -187,12 +211,12 @@ function FeaturedWorksSection(param) {
                                             priority: i === 0
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                            lineNumber: 65,
+                                            lineNumber: 92,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 91,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -205,7 +229,7 @@ function FeaturedWorksSection(param) {
                                                         period: work.period
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                        lineNumber: 79,
+                                                        lineNumber: 106,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -213,13 +237,13 @@ function FeaturedWorksSection(param) {
                                                         children: work.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                        lineNumber: 80,
+                                                        lineNumber: 107,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                lineNumber: 78,
+                                                lineNumber: 105,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -227,7 +251,7 @@ function FeaturedWorksSection(param) {
                                                 children: work.description
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 111,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -237,12 +261,12 @@ function FeaturedWorksSection(param) {
                                                         children: tech
                                                     }, j, false, {
                                                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                        lineNumber: 88,
+                                                        lineNumber: 115,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 113,
                                                 columnNumber: 17
                                             }, this),
                                             work.caseStudy && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -253,10 +277,10 @@ function FeaturedWorksSection(param) {
                                                         className: "px-4 py-2 rounded-lg bg-yellow-300 text-gray-900 font-semibold hover:brightness-95 transition",
                                                         "aria-expanded": expanded.has(i),
                                                         "aria-controls": "case-study-inline-".concat(i),
-                                                        children: expanded.has(i) ? 'Ver menos' : 'Ver mais'
+                                                        children: expanded.has(i) ? L[lang].seeLess : L[lang].seeMore
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                        lineNumber: 100,
+                                                        lineNumber: 128,
                                                         columnNumber: 21
                                                     }, this),
                                                     work.caseStudy.link && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -264,61 +288,62 @@ function FeaturedWorksSection(param) {
                                                         className: "px-4 py-2 rounded-lg border border-yellow-300 text-yellow-300 hover:bg-yellow-300/10 transition",
                                                         target: "_blank",
                                                         rel: "noopener noreferrer",
-                                                        children: "Página do estudo"
+                                                        children: L[lang].studyPage
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                        lineNumber: 110,
+                                                        lineNumber: 138,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 126,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 104,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                lineNumber: 56,
+                                lineNumber: 83,
                                 columnNumber: 13
                             }, this),
                             work.caseStudy && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CaseStudyInline, {
                                 id: "case-study-inline-".concat(i),
                                 work: work,
-                                expanded: expanded.has(i)
+                                expanded: expanded.has(i),
+                                lang: lang
                             }, void 0, false, {
                                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                lineNumber: 126,
-                                columnNumber: 17
+                                lineNumber: 155,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, i, true, {
                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                        lineNumber: 55,
+                        lineNumber: 82,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 53,
+                lineNumber: 80,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 48,
+        lineNumber: 75,
         columnNumber: 5
     }, this);
 }
 _s(FeaturedWorksSection, "VNSJy4rexWGlCL1MVuhnzj/ibs0=");
 _c = FeaturedWorksSection;
 function CaseStudyInline(param) {
-    let { id, work, expanded, variant = 'highlight' } = param;
+    let { id, work, expanded, variant = 'highlight', lang = 'pt' } = param;
     const cs = work.caseStudy;
     const renderHighlight = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "space-y-8",
@@ -330,128 +355,89 @@ function CaseStudyInline(param) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                                     className: "text-yellow-300 font-semibold text-sm tracking-wide",
-                                    children: "Problema"
+                                    children: L[lang].problem
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                    lineNumber: 159,
-                                    columnNumber: 9
+                                    lineNumber: 191,
+                                    columnNumber: 7
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-zinc-200 mt-2",
                                     children: cs.problem
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                    lineNumber: 160,
-                                    columnNumber: 9
+                                    lineNumber: 192,
+                                    columnNumber: 7
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                            lineNumber: 158,
-                            columnNumber: 7
-                        }, this),
-                        cs.testimonial && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
-                                    className: "text-yellow-300 font-semibold text-sm tracking-wide",
-                                    children: "O que dizem nossos clientes"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                    lineNumber: 166,
-                                    columnNumber: 9
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
-                                    className: "mt-3 p-4 bg-[#0f1115] border border-zinc-700/70 rounded-lg italic text-zinc-300",
-                                    children: [
-                                        '"',
-                                        cs.testimonial.quote,
-                                        '"',
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-                                            className: "mt-2 text-sm text-yellow-300",
-                                            children: [
-                                                "— ",
-                                                cs.testimonial.author
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                            lineNumber: 169,
-                                            columnNumber: 11
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                    lineNumber: 167,
-                                    columnNumber: 9
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                            lineNumber: 165,
-                            columnNumber: 7
+                            lineNumber: 190,
+                            columnNumber: 5
                         }, this),
                         cs.context && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                                     className: "text-yellow-300 font-semibold text-sm tracking-wide",
-                                    children: "Contexto"
+                                    children: L[lang].context
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                    lineNumber: 177,
-                                    columnNumber: 11
+                                    lineNumber: 197,
+                                    columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-zinc-200 mt-2",
                                     children: cs.context
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                    lineNumber: 178,
-                                    columnNumber: 11
+                                    lineNumber: 198,
+                                    columnNumber: 9
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                            lineNumber: 176,
-                            columnNumber: 9
+                            lineNumber: 196,
+                            columnNumber: 7
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 157,
-                    columnNumber: 5
+                    lineNumber: 189,
+                    columnNumber: 3
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                             className: "text-yellow-300 font-semibold text-sm tracking-wide",
-                            children: "Solução & Arquitetura"
+                            children: L[lang].solution
                         }, void 0, false, {
                             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                            lineNumber: 185,
-                            columnNumber: 7
+                            lineNumber: 204,
+                            columnNumber: 5
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-zinc-200 mt-2",
                             children: cs.solution
                         }, void 0, false, {
                             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                            lineNumber: 186,
-                            columnNumber: 7
+                            lineNumber: 205,
+                            columnNumber: 5
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 184,
-                    columnNumber: 5
+                    lineNumber: 203,
+                    columnNumber: 3
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                             className: "text-yellow-300 font-semibold text-sm tracking-wide",
-                            children: "Ferramentas & Integrações"
+                            children: L[lang].tools
                         }, void 0, false, {
                             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                            lineNumber: 191,
-                            columnNumber: 7
+                            lineNumber: 209,
+                            columnNumber: 5
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "mt-3 flex flex-wrap gap-2",
@@ -460,18 +446,57 @@ function CaseStudyInline(param) {
                                     children: t
                                 }, i, false, {
                                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                    lineNumber: 194,
-                                    columnNumber: 11
+                                    lineNumber: 212,
+                                    columnNumber: 9
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                            lineNumber: 192,
+                            lineNumber: 210,
+                            columnNumber: 5
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/components/FeaturedWorkSection.tsx",
+                    lineNumber: 208,
+                    columnNumber: 3
+                }, this),
+                cs.testimonial && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
+                            className: "text-yellow-300 font-semibold text-sm tracking-wide",
+                            children: L[lang].testimonials
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/FeaturedWorkSection.tsx",
+                            lineNumber: 221,
+                            columnNumber: 7
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
+                            className: "mt-3 p-4 bg-[#0f1115] border border-zinc-700/70 rounded-lg italic text-zinc-300",
+                            children: [
+                                "“",
+                                cs.testimonial.quote,
+                                "”",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
+                                    className: "mt-2 text-sm text-yellow-300",
+                                    children: [
+                                        "— ",
+                                        cs.testimonial.author
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/components/FeaturedWorkSection.tsx",
+                                    lineNumber: 224,
+                                    columnNumber: 9
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/components/FeaturedWorkSection.tsx",
+                            lineNumber: 222,
                             columnNumber: 7
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 190,
+                    lineNumber: 220,
                     columnNumber: 5
                 }, this),
                 cs.link && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -480,70 +505,73 @@ function CaseStudyInline(param) {
                         target: "_blank",
                         rel: "noopener noreferrer",
                         className: "inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition",
-                        children: "Ver mais"
+                        children: L[lang].seeMore
                     }, void 0, false, {
                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                        lineNumber: 209,
-                        columnNumber: 9
+                        lineNumber: 231,
+                        columnNumber: 7
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 208,
-                    columnNumber: 7
+                    lineNumber: 230,
+                    columnNumber: 5
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-            lineNumber: 155,
-            columnNumber: 3
+            lineNumber: 188,
+            columnNumber: 1
         }, this);
     const renderRail = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "space-y-8",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RailNode, {
-                    title: "Problema & Contexto",
+                    title: "".concat(L[lang].problem, " & ").concat(L[lang].context),
                     content: cs.problem,
                     index: 0
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 225,
-                    columnNumber: 7
+                    lineNumber: 247,
+                    columnNumber: 5
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RailNode, {
-                    title: "Solução & Arquitetura",
+                    title: L[lang].solution,
                     content: cs.solution,
                     index: 1
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 226,
-                    columnNumber: 7
+                    lineNumber: 248,
+                    columnNumber: 5
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RailTools, {
                     tools: cs.tools,
-                    index: 2
+                    index: 2,
+                    lang: lang
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 227,
-                    columnNumber: 7
+                    lineNumber: 249,
+                    columnNumber: 5
                 }, this),
                 cs.testimonial && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialBlock, {
-                    testimonial: cs.testimonial
+                    testimonial: cs.testimonial,
+                    lang: lang
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 228,
+                    lineNumber: 250,
                     columnNumber: 26
                 }, this),
                 cs.link && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CaseStudyLink, {
-                    link: cs.link
+                    link: cs.link,
+                    lang: lang
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 229,
+                    lineNumber: 252,
                     columnNumber: 19
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-            lineNumber: 224,
+            lineNumber: 246,
             columnNumber: 5
         }, this);
     const renderTimeline = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -554,7 +582,7 @@ function CaseStudyInline(param) {
                     content: cs.problem
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 235,
+                    lineNumber: 259,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TimelineItem, {
@@ -562,34 +590,35 @@ function CaseStudyInline(param) {
                     content: cs.solution
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 236,
+                    lineNumber: 260,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TimelineTools, {
                     tools: cs.tools
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 237,
+                    lineNumber: 261,
                     columnNumber: 7
                 }, this),
                 cs.testimonial && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialBlock, {
                     testimonial: cs.testimonial
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 238,
+                    lineNumber: 262,
                     columnNumber: 26
                 }, this),
                 cs.link && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CaseStudyLink, {
-                    link: cs.link
+                    link: cs.link,
+                    lang: lang
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 239,
+                    lineNumber: 263,
                     columnNumber: 19
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-            lineNumber: 234,
+            lineNumber: 258,
             columnNumber: 5
         }, this);
     const renderCards = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -600,7 +629,7 @@ function CaseStudyInline(param) {
                     content: cs.problem
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 245,
+                    lineNumber: 270,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CardItem, {
@@ -608,34 +637,35 @@ function CaseStudyInline(param) {
                     content: cs.solution
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 246,
+                    lineNumber: 271,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CardTools, {
                     tools: cs.tools
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 247,
+                    lineNumber: 272,
                     columnNumber: 7
                 }, this),
                 cs.testimonial && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialBlock, {
                     testimonial: cs.testimonial
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 248,
+                    lineNumber: 273,
                     columnNumber: 26
                 }, this),
                 cs.link && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CaseStudyLink, {
-                    link: cs.link
+                    link: cs.link,
+                    lang: lang
                 }, void 0, false, {
                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                    lineNumber: 249,
+                    lineNumber: 274,
                     columnNumber: 19
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-            lineNumber: 244,
+            lineNumber: 269,
             columnNumber: 5
         }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -651,7 +681,7 @@ function CaseStudyInline(param) {
                         className: "absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-yellow-400/0 via-yellow-300/60 to-yellow-400/0"
                     }, void 0, false, {
                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                        lineNumber: 264,
+                        lineNumber: 290,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -663,16 +693,16 @@ function CaseStudyInline(param) {
                                     className: "text-zinc-100 font-semibold tracking-tight",
                                     children: [
                                         work.title,
-                                        " — Case"
+                                        L[lang].caseSuffix
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                    lineNumber: 268,
+                                    lineNumber: 294,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                                lineNumber: 267,
+                                lineNumber: 293,
                                 columnNumber: 13
                             }, this),
                             variant === 'highlight' && renderHighlight(),
@@ -682,23 +712,23 @@ function CaseStudyInline(param) {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                        lineNumber: 266,
+                        lineNumber: 292,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 262,
+                lineNumber: 288,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-            lineNumber: 261,
+            lineNumber: 287,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 254,
+        lineNumber: 280,
         columnNumber: 5
     }, this);
 }
@@ -715,7 +745,7 @@ _c1 = CaseStudyInline;
                 }
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 286,
+                lineNumber: 313,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
@@ -723,7 +753,7 @@ _c1 = CaseStudyInline;
                 children: title
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 290,
+                lineNumber: 317,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -731,19 +761,19 @@ _c1 = CaseStudyInline;
                 children: content
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 291,
+                lineNumber: 318,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 285,
+        lineNumber: 312,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
 _c2 = RailNode;
 const RailTools = (param)=>{
-    let { tools, index } = param;
+    let { tools, index, lang = 'pt' } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "relative ml-10",
         children: [
@@ -754,15 +784,15 @@ const RailTools = (param)=>{
                 }
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 297,
+                lineNumber: 324,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                 className: "text-yellow-300 font-semibold text-sm",
-                children: "Ferramentas & Integrações"
+                children: L[lang].tools
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 301,
+                lineNumber: 328,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -772,24 +802,24 @@ const RailTools = (param)=>{
                         children: t
                     }, i, false, {
                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                        lineNumber: 304,
+                        lineNumber: 331,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 302,
+                lineNumber: 329,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 296,
+        lineNumber: 323,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
 _c3 = RailTools;
 const CaseStudyLink = (param)=>{
-    let { link } = param;
+    let { link, lang = 'pt' } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "mt-2",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -797,15 +827,15 @@ const CaseStudyLink = (param)=>{
             target: "_blank",
             rel: "noopener noreferrer",
             className: "inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition",
-            children: "Ver mais"
+            children: L[lang].seeMore
         }, void 0, false, {
             fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-            lineNumber: 314,
+            lineNumber: 341,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 313,
+        lineNumber: 340,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -819,7 +849,7 @@ _c4 = CaseStudyLink;
                 className: "absolute -left-[9px] w-4 h-4 bg-yellow-300 rounded-full border border-yellow-200"
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 328,
+                lineNumber: 355,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
@@ -827,7 +857,7 @@ _c4 = CaseStudyLink;
                 children: title
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 329,
+                lineNumber: 356,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -835,19 +865,19 @@ _c4 = CaseStudyLink;
                 children: content
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 330,
+                lineNumber: 357,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 327,
+        lineNumber: 354,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
 _c5 = TimelineItem;
 const TimelineTools = (param)=>{
-    let { tools } = param;
+    let { tools, lang = 'pt' } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
         className: "ml-4",
         children: [
@@ -855,15 +885,15 @@ const TimelineTools = (param)=>{
                 className: "absolute -left-[9px] w-4 h-4 bg-yellow-300 rounded-full border border-yellow-200"
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 336,
+                lineNumber: 363,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                 className: "text-yellow-300 font-semibold",
-                children: "Ferramentas & Integrações"
+                children: L[lang].tools
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 337,
+                lineNumber: 364,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -873,34 +903,34 @@ const TimelineTools = (param)=>{
                         children: t
                     }, i, false, {
                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                        lineNumber: 340,
+                        lineNumber: 367,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 338,
+                lineNumber: 365,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 335,
+        lineNumber: 362,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
 _c6 = TimelineTools;
 const TestimonialBlock = (param)=>{
-    let { testimonial } = param;
+    let { testimonial, lang = 'pt' } = param;
     var _testimonial_author;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "mt-2",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                 className: "text-yellow-300 font-semibold text-sm tracking-wide",
-                children: "O que dizem nossos clientes"
+                children: L[lang].testimonials
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 354,
+                lineNumber: 378,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
@@ -911,23 +941,23 @@ const TestimonialBlock = (param)=>{
                         className: "mt-2 text-sm text-yellow-300",
                         children: [
                             "— ",
-                            (_testimonial_author = testimonial.author) !== null && _testimonial_author !== void 0 ? _testimonial_author : 'Cliente'
+                            (_testimonial_author = testimonial.author) !== null && _testimonial_author !== void 0 ? _testimonial_author : lang === 'pt' ? 'Cliente' : 'Client'
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                        lineNumber: 357,
+                        lineNumber: 381,
                         columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 355,
+                lineNumber: 379,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 353,
+        lineNumber: 377,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -942,7 +972,7 @@ _c7 = TestimonialBlock;
                 children: title
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 369,
+                lineNumber: 392,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -950,13 +980,13 @@ _c7 = TestimonialBlock;
                 children: content
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 370,
+                lineNumber: 393,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 368,
+        lineNumber: 391,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -971,7 +1001,7 @@ const CardTools = (param)=>{
                 children: "Ferramentas & Integrações"
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 376,
+                lineNumber: 399,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -981,18 +1011,18 @@ const CardTools = (param)=>{
                         children: t
                     }, i, false, {
                         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                        lineNumber: 379,
+                        lineNumber: 402,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-                lineNumber: 377,
+                lineNumber: 400,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 375,
+        lineNumber: 398,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1007,7 +1037,7 @@ function PeriodBadge(param) {
         children: text
     }, void 0, false, {
         fileName: "[project]/app/components/FeaturedWorkSection.tsx",
-        lineNumber: 392,
+        lineNumber: 415,
         columnNumber: 5
     }, this);
 }
@@ -1049,24 +1079,24 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Feature
 ;
 const timeline = [
     {
-        img: "/img/timeline-idev.png",
+        img: "/software_engineer/linc-logo.png",
+        alt: "LINC/UFPA",
+        year: "2019 - 2020"
+    },
+    {
+        img: "/software_engineer/serpro.png",
+        alt: "SERPRO",
+        year: "2021 - 2023"
+    },
+    {
+        img: "/software_engineer/idev-logo.png",
+        alt: "iDEV",
+        year: "2023 - Atual"
+    },
+    {
+        img: "/software_engineer/logo-podoclin.png",
         alt: "iDEV",
         year: "2024 - Atual"
-    },
-    {
-        img: "/img/timeline-serpro.png",
-        alt: "SERPRO",
-        year: "2023 - 2024"
-    },
-    {
-        img: "/img/timeline-linc.png",
-        alt: "LINC/UFPA",
-        year: "2022 - 2023"
-    },
-    {
-        img: "/img/timeline-ufpa.png",
-        alt: "UFPA",
-        year: "2019 - Atual"
     }
 ];
 // Separe as partes do texto que vão em cada local
@@ -1078,7 +1108,7 @@ const aboutMePT = {
                 children: "Sobre mim"
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 41,
+                lineNumber: 44,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1086,7 +1116,7 @@ const aboutMePT = {
                 children: "Cientista da Computação pela Universidade Federal do Pará, fundador e arquiteto de soluções na iDEV. Atuo há mais de 4 anos em projetos de análise de dados, machine learning e engenharia de software, desenvolvendo soluções para empresas públicas e privadas."
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 42,
+                lineNumber: 45,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1098,7 +1128,7 @@ const aboutMePT = {
                 children: "Já fui cientista de dados no SERPRO, onde trabalhei com inteligência de dados em larga escala, e pesquisador no LINC/UFPA, aplicando redes neurais e métodos de redução de dimensionalidade para problemas em biotecnologia."
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 49,
+                lineNumber: 52,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1106,14 +1136,14 @@ const aboutMePT = {
                 children: "Tenho experiência prática em pipelines de dados, arquitetura cloud (Kubernetes, Azure), desenvolvimento backend (Node.js, Python) e visualização (Power BI, React). Foco em soluções que conectam a complexidade dos dados ao valor de negócio, com entregas robustas e documentação clara."
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 52,
+                lineNumber: 55,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: "Atualmente, lidero a transformação analítica da iDEV, criando infraestruturas escaláveis, modelos de dados e automação inteligente para acelerar decisões baseadas em dados."
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 55,
+                lineNumber: 58,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1124,18 +1154,10 @@ const aboutMeEN = {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                 className: "text-5xl md:text-6xl font-serif font-extralight leading-tight mb-4",
-                children: [
-                    "About",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                        fileName: "[project]/app/sections/DataScienceSection.tsx",
-                        lineNumber: 65,
-                        columnNumber: 95
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    "Me"
-                ]
-            }, void 0, true, {
+                children: "About Me"
+            }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 65,
+                lineNumber: 68,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1143,7 +1165,7 @@ const aboutMeEN = {
                 children: "Computer Scientist from the Federal University of Pará, founder and solutions architect at iDEV. I have 4+ years of experience in data analysis, machine learning, and software engineering, building solutions for both public and private organizations."
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 66,
+                lineNumber: 69,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1155,7 +1177,7 @@ const aboutMeEN = {
                 children: "Former data scientist at SERPRO, working with large-scale data intelligence, and researcher at LINC/UFPA, applying neural networks and dimensionality reduction methods to biotech and life sciences challenges."
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 73,
+                lineNumber: 76,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1163,14 +1185,14 @@ const aboutMeEN = {
                 children: "Hands-on experience in data pipelines, cloud architecture (Kubernetes, Azure), backend development (Node.js, Python), and visualization (Power BI, React). I focus on solutions that bridge data complexity and business value, always delivering robust outcomes and clear documentation."
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 76,
+                lineNumber: 79,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: "Currently leading analytics transformation at iDEV, building scalable infrastructures, data models, and intelligent automation to accelerate data-driven decisions."
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 79,
+                lineNumber: 82,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1190,7 +1212,23 @@ const featuredWorksPT = [
             "Kubernetes",
             "Python",
             "Power BI"
-        ]
+        ],
+        caseStudy: {
+            problem: "A iDEV precisava centralizar e estruturar dados dispersos de diferentes módulos do PodoClin para análise em larga escala e tomada de decisão estratégica.",
+            solution: "Desenhei e implementei um modelo estrela escalável para consolidar dados fragmentados, criei pipelines em tempo real para ingestão e detecção de anomalias, e desenvolvi dashboards de BI no Power BI, reduzindo o tempo de análise e aumentando a precisão das métricas.",
+            tools: [
+                "Node.js",
+                "Next.js",
+                "MongoDB",
+                "Kubernetes",
+                "Python",
+                "Power BI"
+            ],
+            testimonial: {
+                quote: "A performance melhorou muito! Dashboards abrem em segundos e novas APIs estão no ar em poucos dias.",
+                author: "João Pereira, CTO"
+            }
+        }
     },
     {
         img: "/data_science/Logo_govshield.png",
@@ -1204,7 +1242,22 @@ const featuredWorksPT = [
             "Azure Synapse",
             "SQL Server",
             "Scikit-learn"
-        ]
+        ],
+        caseStudy: {
+            problem: "O SERPRO precisava consolidar grandes volumes de dados governamentais e criar análises e predições para apoiar decisões estratégicas e operacionais.",
+            solution: "Implementei pipelines robustos no Azure Synapse, automatizei ETLs, desenvolvi dashboards dinâmicos e criei modelos preditivos em Python para antecipar eventos críticos, aumentando a eficiência das operações federais.",
+            tools: [
+                "Python",
+                "Power BI",
+                "Azure Synapse",
+                "SQL Server",
+                "Scikit-learn"
+            ],
+            testimonial: {
+                quote: "Profissional extremamente dedicado e competente, conhecimento muito acima da média.",
+                author: "Supervisor no SERPRO"
+            }
+        }
     },
     {
         img: "/img/highlight-mlbio.png",
@@ -1218,7 +1271,22 @@ const featuredWorksPT = [
             "Django",
             "React",
             "Power BI"
-        ]
+        ],
+        caseStudy: {
+            problem: "Pesquisadores precisavam de uma ferramenta prática para classificar CPPs e explorar visualmente dados biológicos de alta dimensionalidade.",
+            solution: "Desenvolvi modelos de redes neurais para classificação de CPPs e integrei a inferência em tempo real em uma aplicação web. Criei também um framework para visualização interativa usando PCA, t-SNE e UMAP, facilitando a análise exploratória de dados.",
+            tools: [
+                "Python",
+                "Scikit-learn",
+                "Django",
+                "React",
+                "Power BI"
+            ],
+            testimonial: {
+                quote: "O desenvolvimento foi essencial para a publicação dos nossos artigos!",
+                author: "Pesquisadores do LINC"
+            }
+        }
     }
 ];
 const featuredWorksEN = [
@@ -1268,6 +1336,7 @@ const featuredWorksEN = [
 ];
 function DataScienceSection(param) {
     let { lang = 'pt' } = param;
+    // use textos e featured works específicos de Data Science
     const textContent = lang === 'pt' ? aboutMePT : aboutMeEN;
     const featuredWorks = lang === 'pt' ? featuredWorksPT : featuredWorksEN;
     const sectionTitle = lang === 'pt' ? "Trabalhos em Destaque" : "Featured Projects";
@@ -1278,10 +1347,10 @@ function DataScienceSection(param) {
                 rest: textContent.rest,
                 profileImg: "/profile_picture.png",
                 profileAlt: "Gabriel Aragão",
-                timeline: timeline
+                timeline: timeline !== null && timeline !== void 0 ? timeline : timeline
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 149,
+                lineNumber: 209,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$FeaturedWorkSection$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FeaturedWorksSection"], {
@@ -1289,7 +1358,7 @@ function DataScienceSection(param) {
                 works: featuredWorks
             }, void 0, false, {
                 fileName: "[project]/app/sections/DataScienceSection.tsx",
-                lineNumber: 158,
+                lineNumber: 216,
                 columnNumber: 7
             }, this)
         ]
@@ -1319,24 +1388,24 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Feature
 ;
 const timeline = [
     {
-        img: "/software-engineer/logo-podoclin.png",
-        alt: "iDEV",
-        year: "2024 - Atual"
-    },
-    {
-        img: "/software-engineer/serpro.png",
-        alt: "SERPRO",
-        year: "2021 - 2023"
-    },
-    {
-        img: "/software-engineer/linc-logo.png",
+        img: "/software_engineer/linc-logo.png",
         alt: "LINC/UFPA",
         year: "2019 - 2020"
     },
     {
-        img: "/software-engineer/linc-logo.png",
-        alt: "UFPA",
-        year: "2019 - Atual"
+        img: "/software_engineer/serpro.png",
+        alt: "SERPRO",
+        year: "2021 - 2023"
+    },
+    {
+        img: "/software_engineer/idev-logo.png",
+        alt: "iDEV",
+        year: "2023 - Atual"
+    },
+    {
+        img: "/software_engineer/logo-podoclin.png",
+        alt: "iDEV",
+        year: "2024 - Atual"
     }
 ];
 const aboutMePT = {
@@ -1347,7 +1416,7 @@ const aboutMePT = {
                 children: "Sobre mim"
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 39,
+                lineNumber: 42,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1355,7 +1424,7 @@ const aboutMePT = {
                 children: "Engenheiro de Software Sênior com mais de 5 anos de experiência em aplicações web escaláveis, sistemas cloud-native e pipelines de DevOps. Especialista em TypeScript, Node.js, React, GraphQL e Kubernetes. Lidero times ágeis, orquestro microserviços e entrego soluções robustas em ambientes dinâmicos."
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 42,
+                lineNumber: 45,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1367,7 +1436,7 @@ const aboutMePT = {
                 children: "I am currently the Technical Lead and Co-Founder at iDEV, where I design and develop SaaS products end-to-end, including multi-tenant architecture, dynamic permissioning, and automated deployment using GitHub Actions, Docker, and Kubernetes. I have developed systems for businesses originating from OAB commissions, medical solutions, and B2B platforms."
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 49,
+                lineNumber: 52,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1375,14 +1444,14 @@ const aboutMePT = {
                 children: "Atuei como full stack no SERPRO, desenvolvendo APIs, dashboards federais, autenticação segura e ETLs escaláveis para sistemas críticos, com práticas modernas de CI/CD."
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 53,
+                lineNumber: 56,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: "No LINC/UFPA, integrei pipelines de ML e desenvolvi backends modulares em Python (Flask, Django) e Java (Spring Boot), orquestrando desde model serving até exportação de dados em tempo real."
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 56,
+                lineNumber: 59,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1396,7 +1465,7 @@ const aboutMeEN = {
                 children: "About Me"
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 66,
+                lineNumber: 69,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1404,7 +1473,7 @@ const aboutMeEN = {
                 children: "Senior Software Engineer with 5+ years of experience building scalable web apps, cloud-native systems, and DevOps pipelines. Specialist in TypeScript, Node.js, React, GraphQL, and Kubernetes. Proven track record in agile teams, microservices, and robust, production-grade solutions."
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 69,
+                lineNumber: 72,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1416,7 +1485,7 @@ const aboutMeEN = {
                 children: "I am currently the Technical Lead and Co-Founder at iDEV, where I design and develop SaaS products end-to-end, including multi-tenant architecture, dynamic permissioning, and automated deployment using GitHub Actions, Docker, and Kubernetes. I have developed systems for businesses originating from OAB commissions, medical solutions, and B2B platforms."
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 76,
+                lineNumber: 79,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1424,14 +1493,14 @@ const aboutMeEN = {
                 children: "At SERPRO, I worked as a full stack developer, building APIs, federal dashboards, secure authentication, and scalable ETLs for critical systems, following modern CI/CD best practices."
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 80,
+                lineNumber: 83,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: "At LINC/UFPA, I integrated ML pipelines and developed modular backends in Python (Flask, Django) and Java (Spring Boot), orchestrating model serving and real-time data exports."
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 83,
+                lineNumber: 86,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1442,8 +1511,8 @@ const featuredWorksPT = [
         img: "/software_engineer/logo-podoclin.png",
         alt: "PodoClin",
         title: "PodoClin – SaaS para Clínicas de Podologia",
-        period: "2022 - Atual",
-        description: "Criação, arquitetura e liderança técnica da plataforma SaaS multi-tenant, incluindo motor de formulários dinâmicos, geração de PDFs, integrações (WhatsApp, Mercado Pago), deploy Kubernetes e interfaces web/mobile responsivas.",
+        period: "2024 - Atual",
+        description: "Criação, arquitetura e liderança técnica da plataforma SaaS multi-tenant, incluindo motor de formulários dinâmicos, geração de PDFs, integrações (WhatsApp, Stripe), deploy Kubernetes e interfaces web/mobile responsivas.",
         stack: [
             "TypeScript",
             "Next.js",
@@ -1455,7 +1524,7 @@ const featuredWorksPT = [
         ],
         caseStudy: {
             problem: "Clínicas de podologia enfrentavam dificuldades para gerenciar agendamentos, histórico clínico e comunicação com pacientes em uma única plataforma.",
-            solution: "Desenvolvemos um SaaS multi-tenant com formulários dinâmicos, geração automática de PDFs, integrações com WhatsApp e Mercado Pago, e deploy automatizado em Kubernetes.",
+            solution: "Desenvolvemos um SaaS multi-tenant com formulários dinâmicos, geração automática de PDFs, integrações com WhatsApp e Stripe, e deploy automatizado em Kubernetes.",
             tools: [
                 "Next.js",
                 "Node.js",
@@ -1466,8 +1535,8 @@ const featuredWorksPT = [
                 "GitHub Actions"
             ],
             testimonial: {
-                quote: "O agendamento ficou muito mais ágil: o tempo médio caiu de 15 para 5 minutos e os erros mensais despencaram de 12 para 1.",
-                author: "Ana Souza, Podóloga"
+                quote: "Um sistema excelente, nunca mais tive rinite alérgica depois que comecei a usar o Podoclin! Ótimo sistema de agendamento e prontuário.",
+                author: "Podólogas da Podoclin"
             }
         }
     },
@@ -1475,7 +1544,7 @@ const featuredWorksPT = [
         img: "/software_engineer/adv-mobile.png",
         alt: "Desenvolvimento de Sistemas Mobile",
         title: "Desenvolvimento Completo de Sistemas Mobile",
-        period: "2024",
+        period: "2023 - 2024",
         description: "Concepção e entrega de aplicativos mobile para Android e iOS utilizando frameworks multiplataforma, integrados a backends complexos, com sincronização de dados em tempo real e implantação multiambiente.",
         stack: [
             "React Native",
@@ -1497,8 +1566,8 @@ const featuredWorksPT = [
                 "GitHub Actions"
             ],
             testimonial: {
-                quote: "Depois de começarmos a usar o sistema, conseguimos reduzir drasticamente o tempo de atendimento e nossos clientes estão muito mais satisfeitos!",
-                author: "Ana Souza, Podóloga"
+                quote: "Aplicativo excelente! Está atendendo todas as necessidades do projeto.",
+                author: "Diretor de comissão da OAB"
             }
         }
     },
@@ -1528,8 +1597,8 @@ const featuredWorksPT = [
                 "Agile"
             ],
             testimonial: {
-                quote: "A performance melhorou muito! Dashboards abrem em segundos e novas APIs estão no ar em poucos dias.",
-                author: "João Pereira, CTO"
+                quote: "Profissional extremamente dedicado e competente, conhecimento muito acima da média.",
+                author: "Supervisor no SERPRO"
             }
         }
     },
@@ -1537,7 +1606,7 @@ const featuredWorksPT = [
         img: "/software_engineer/linc-logo.png",
         alt: "Backend Modular ML",
         title: "LINC/UFPA – Backend Modular e ML",
-        period: "2020",
+        period: "2019 - 2020",
         description: "Desenvolvimento de sistemas modulares Python (Flask/Django), integração com Java Spring Boot, deploy Dockerizado e pipelines para servir modelos de ML.",
         stack: [
             "Python",
@@ -1561,8 +1630,8 @@ const featuredWorksPT = [
                 "PostgreSQL"
             ],
             testimonial: {
-                quote: "Agora publicamos novos modelos em 3 dias (antes levava 2 semanas) e a compatibilidade entre linguagens passou de limitada para total.",
-                author: "João Pereira, CTO"
+                quote: "O desenvolvimento foi essencial para a publicação dos nossos artigos!",
+                author: "Pesquisadores do LINC"
             }
         }
     }
@@ -1595,19 +1664,9 @@ const featuredWorksEN = [
                 "Docker",
                 "GitHub Actions"
             ],
-            beforeAfter: {
-                metrics: [
-                    {
-                        label: "Average booking time",
-                        before: "15 min",
-                        after: "5 min"
-                    },
-                    {
-                        label: "Scheduling errors",
-                        before: "12/month",
-                        after: "1/month"
-                    }
-                ]
+            testimonial: {
+                quote: "An excellent system — I never had allergic rhinitis again after I started using Podoclin! Great scheduling and medical record system.",
+                author: "Podiatrists at Podoclin"
             }
         }
     },
@@ -1636,19 +1695,9 @@ const featuredWorksEN = [
                 "Kubernetes",
                 "GitHub Actions"
             ],
-            beforeAfter: {
-                metrics: [
-                    {
-                        label: "Time to market for new features",
-                        before: "3 weeks",
-                        after: "5 days"
-                    },
-                    {
-                        label: "Deployment failures",
-                        before: "5/month",
-                        after: "0/month"
-                    }
-                ]
+            testimonial: {
+                quote: "Excellent app! It meets all the needs of the project.",
+                author: "Director of the OAB Commission"
             }
         }
     },
@@ -1677,19 +1726,9 @@ const featuredWorksEN = [
                 "CI/CD",
                 "Agile"
             ],
-            beforeAfter: {
-                metrics: [
-                    {
-                        label: "Dashboard load time",
-                        before: "45s",
-                        after: "5s"
-                    },
-                    {
-                        label: "New API provisioning time",
-                        before: "2 weeks",
-                        after: "3 days"
-                    }
-                ]
+            testimonial: {
+                quote: "Extremely dedicated and competent professional, with knowledge far above average.",
+                author: "Supervisor at SERPRO"
             }
         }
     },
@@ -1720,19 +1759,9 @@ const featuredWorksEN = [
                 "Docker",
                 "PostgreSQL"
             ],
-            beforeAfter: {
-                metrics: [
-                    {
-                        label: "Time to deploy a new model",
-                        before: "2 weeks",
-                        after: "3 days"
-                    },
-                    {
-                        label: "Cross-language compatibility",
-                        before: "Limited",
-                        after: "Full"
-                    }
-                ]
+            testimonial: {
+                quote: "The development was essential for the publication of our articles!",
+                author: "Researchers at LINC"
             }
         }
     }
@@ -1752,7 +1781,7 @@ function SoftwareEngineerSection(param) {
                 timeline: timeline
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 392,
+                lineNumber: 391,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$FeaturedWorkSection$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FeaturedWorksSection"], {
@@ -1760,7 +1789,7 @@ function SoftwareEngineerSection(param) {
                 works: featuredWorks
             }, void 0, false, {
                 fileName: "[project]/app/sections/SoftwareEngineerSection.tsx",
-                lineNumber: 399,
+                lineNumber: 398,
                 columnNumber: 7
             }, this)
         ]
@@ -1788,27 +1817,73 @@ var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 const BG_COLOR = '#131313';
-function BackgroundNight(param) {
-    let { children } = param;
+function BackgroundNight() {
     _s();
     const canvasRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const rafRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "BackgroundNight.useEffect": ()=>{
             const canvas = canvasRef.current;
             if (!canvas) return;
             const parent = canvas.parentElement;
             if (!parent) return;
-            // Use sempre o operador ! ao acessar canvas ou ctx depois dos checks
             function resizeCanvas() {
                 const canvasEl = canvasRef.current;
                 const parentEl = canvasEl.parentElement;
-                canvasEl.width = parentEl.scrollWidth;
-                canvasEl.height = parentEl.scrollHeight;
+                const rect = parentEl.getBoundingClientRect();
+                const w = Math.ceil(rect.width);
+                const h = Math.ceil(rect.height);
+                if (canvasEl.width !== w || canvasEl.height !== h) {
+                    canvasEl.width = w;
+                    canvasEl.height = h;
+                }
             }
             resizeCanvas();
             const ctx = canvas.getContext('2d');
             if (!ctx) return;
-            // Parâmetros
+            let noFly = {
+                x: 0,
+                y: 0,
+                w: 0,
+                h: 0
+            };
+            function distanceSquared(x1, y1, x2, y2) {
+                const dx = x1 - x2;
+                const dy = y1 - y2;
+                return dx * dx + dy * dy;
+            }
+            function updateNoFly() {
+                const parentRect = parent.getBoundingClientRect();
+                const target = document.getElementById('main-content'); // coloque esse id no seu wrapper central
+                if (target) {
+                    const r = target.getBoundingClientRect();
+                    // converte para coords do canvas (mesmo pai absoluto)
+                    const x = Math.max(0, Math.floor(r.left - parentRect.left) - 24);
+                    const y = Math.max(0, Math.floor(r.top - parentRect.top) - 24);
+                    const w = Math.min(canvas.width, Math.ceil(r.width) + 48);
+                    const h = Math.min(canvas.height, Math.ceil(r.height) + 48);
+                    noFly = {
+                        x,
+                        y,
+                        w,
+                        h
+                    };
+                } else {
+                    // fallback: faixa central
+                    const bandW = Math.min(960, Math.floor(canvas.width * 0.6));
+                    const x = Math.floor((canvas.width - bandW) / 2);
+                    noFly = {
+                        x,
+                        y: 0,
+                        w: bandW,
+                        h: canvas.height
+                    };
+                }
+            }
+            updateNoFly();
+            function insideNoFly(x, y) {
+                return x >= noFly.x && x <= noFly.x + noFly.w && y >= noFly.y && y <= noFly.y + noFly.h;
+            }
             const TOTAL_STARS = 120;
             const STAR_RADIUS = [
                 1,
@@ -1819,26 +1894,46 @@ function BackgroundNight(param) {
             const CONSTELLATION_SIZE = 8 + Math.floor(Math.random() * 10);
             const LINE_DISTANCE = 170;
             const stars = [];
-            let total = 0;
+            const groups = Array.from({
+                length: CONSTELLATION_COUNT
+            }, {
+                "BackgroundNight.useEffect.groups": ()=>[]
+            }["BackgroundNight.useEffect.groups"]);
+            // Constelações (uma vez só, não duplicado)
             for(let c = 0; c < CONSTELLATION_COUNT; c++){
                 const cx = Math.random() * canvas.width;
                 const cy = Math.random() * canvas.height;
                 for(let i = 0; i < CONSTELLATION_SIZE; i++){
+                    let x = cx + Math.random() * 120 - 60;
+                    let y = cy + Math.random() * 80 - 40;
+                    let tries = 0;
+                    while(insideNoFly(x, y) && tries++ < 20){
+                        x = Math.random() * canvas.width;
+                        y = Math.random() * canvas.height;
+                    }
                     stars.push({
-                        x: cx + Math.random() * 120 - 60,
-                        y: cy + Math.random() * 80 - 40,
+                        x,
+                        y,
                         vx: (Math.random() - 0.5) * SPEED,
                         vy: (Math.random() - 0.5) * SPEED,
                         r: STAR_RADIUS[0] + Math.random() * (STAR_RADIUS[1] - STAR_RADIUS[0]),
                         group: c
                     });
-                    total++;
+                    groups[c].push(stars.length - 1);
                 }
             }
-            for(let i = total; i < TOTAL_STARS; i++){
+            // Estrelas soltas
+            while(stars.length < CONSTELLATION_COUNT * CONSTELLATION_SIZE + TOTAL_STARS){
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                let tries = 0;
+                while(insideNoFly(x, y) && tries++ < 20){
+                    x = Math.random() * canvas.width;
+                    y = Math.random() * canvas.height;
+                }
                 stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
+                    x,
+                    y,
                     vx: (Math.random() - 0.5) * SPEED,
                     vy: (Math.random() - 0.5) * SPEED,
                     r: STAR_RADIUS[0] + Math.random() * (STAR_RADIUS[1] - STAR_RADIUS[0]),
@@ -1849,7 +1944,8 @@ function BackgroundNight(param) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = BG_COLOR;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                // Linhas entre estrelas do mesmo grupo
+                const LINE_DISTANCE_SQ = LINE_DISTANCE * LINE_DISTANCE;
+                // Constelações
                 for(let g = 0; g < CONSTELLATION_COUNT; g++){
                     const groupStars = stars.filter({
                         "BackgroundNight.useEffect.drawConstellations.groupStars": (s)=>s.group === g
@@ -1859,11 +1955,9 @@ function BackgroundNight(param) {
                         const connections = [];
                         for(let j = 0; j < groupStars.length; j++){
                             if (i === j) continue;
-                            const dx = groupStars[i].x - groupStars[j].x;
-                            const dy = groupStars[i].y - groupStars[j].y;
-                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            const distSq = distanceSquared(groupStars[i].x, groupStars[i].y, groupStars[j].x, groupStars[j].y);
                             connections.push({
-                                dist,
+                                dist: distSq,
                                 idx: j
                             });
                         }
@@ -1881,23 +1975,21 @@ function BackgroundNight(param) {
                         }
                     }
                 }
-                // Linhas suaves entre estrelas próximas
+                // Linhas entre todas as estrelas
                 for(let i = 0; i < stars.length; i++){
                     for(let j = i + 1; j < stars.length; j++){
-                        const dx = stars[i].x - stars[j].x;
-                        const dy = stars[i].y - stars[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < LINE_DISTANCE) {
+                        const distSq = distanceSquared(stars[i].x, stars[i].y, stars[j].x, stars[j].y);
+                        if (distSq < LINE_DISTANCE_SQ) {
                             ctx.beginPath();
                             ctx.moveTo(stars[i].x, stars[i].y);
                             ctx.lineTo(stars[j].x, stars[j].y);
-                            ctx.strokeStyle = "rgba(255,255,255,".concat(0.12 * (1 - dist / LINE_DISTANCE), ")");
+                            ctx.strokeStyle = "rgba(255,255,255,".concat(0.12 * (1 - Math.sqrt(distSq) / LINE_DISTANCE), ")");
                             ctx.lineWidth = 0.5;
                             ctx.stroke();
                         }
                     }
                 }
-                // Estrelas
+                // Desenho das estrelas
                 for (const s of stars){
                     ctx.beginPath();
                     ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
@@ -1921,7 +2013,6 @@ function BackgroundNight(param) {
                     scale -= SCALE_STEP;
                     if (scale <= SCALE_MIN) growing = true;
                 }
-                // Pulsação nas constelações
                 for(let c = 0; c < CONSTELLATION_COUNT; c++){
                     const groupStars = stars.filter({
                         "BackgroundNight.useEffect.animate.groupStars": (s)=>s.group === c
@@ -1936,94 +2027,101 @@ function BackgroundNight(param) {
                     for (const s of groupStars){
                         s.x += s.vx;
                         s.y += s.vy;
-                        // Limitar dentro do canvas
-                        if (s.x < s.r) {
-                            s.x = s.r;
-                            s.vx *= -1;
-                        }
-                        if (s.x > canvas.width - s.r) {
-                            s.x = canvas.width - s.r;
-                            s.vx *= -1;
-                        }
-                        if (s.y < s.r) {
-                            s.y = s.r;
-                            s.vy *= -1;
-                        }
-                        if (s.y > canvas.height - s.r) {
-                            s.y = canvas.height - s.r;
-                            s.vy *= -1;
-                        }
+                        if (s.x < s.r || s.x > canvas.width - s.r) s.vx *= -1;
+                        if (s.y < s.r || s.y > canvas.height - s.r) s.vy *= -1;
                         s.x = cx + (s.x - cx) * scale;
                         s.y = cy + (s.y - cy) * scale;
+                        // depois dos limites do canvas:
+                        if (insideNoFly(s.x, s.y)) {
+                            const left = Math.abs(s.x - noFly.x);
+                            const right = Math.abs(s.x - (noFly.x + noFly.w));
+                            const top = Math.abs(s.y - noFly.y);
+                            const bottom = Math.abs(s.y - (noFly.y + noFly.h));
+                            const min = Math.min(left, right, top, bottom);
+                            if (min === left) {
+                                s.x = noFly.x - s.r;
+                                s.vx = -Math.abs(s.vx);
+                            } else if (min === right) {
+                                s.x = noFly.x + noFly.w + s.r;
+                                s.vx = Math.abs(s.vx);
+                            } else if (min === top) {
+                                s.y = noFly.y - s.r;
+                                s.vy = -Math.abs(s.vy);
+                            } else {
+                                s.y = noFly.y + noFly.h + s.r;
+                                s.vy = Math.abs(s.vy);
+                            }
+                        }
                     }
                 }
-                // estrelas soltas
                 for (const s of stars){
                     if (s.group !== null) continue;
                     s.x += s.vx;
                     s.y += s.vy;
-                    // Limitar dentro do canvas
-                    if (s.x < s.r) {
-                        s.x = s.r;
-                        s.vx *= -1;
-                    }
-                    if (s.x > canvas.width - s.r) {
-                        s.x = canvas.width - s.r;
-                        s.vx *= -1;
-                    }
-                    if (s.y < s.r) {
-                        s.y = s.r;
-                        s.vy *= -1;
-                    }
-                    if (s.y > canvas.height - s.r) {
-                        s.y = canvas.height - s.r;
-                        s.vy *= -1;
+                    if (s.x < s.r || s.x > canvas.width - s.r) s.vx *= -1;
+                    if (s.y < s.r || s.y > canvas.height - s.r) s.vy *= -1;
+                    if (insideNoFly(s.x, s.y)) {
+                        const left = Math.abs(s.x - noFly.x);
+                        const right = Math.abs(s.x - (noFly.x + noFly.w));
+                        const top = Math.abs(s.y - noFly.y);
+                        const bottom = Math.abs(s.y - (noFly.y + noFly.h));
+                        const min = Math.min(left, right, top, bottom);
+                        if (min === left) {
+                            s.x = noFly.x - s.r;
+                            s.vx = -Math.abs(s.vx);
+                        } else if (min === right) {
+                            s.x = noFly.x + noFly.w + s.r;
+                            s.vx = Math.abs(s.vx);
+                        } else if (min === top) {
+                            s.y = noFly.y - s.r;
+                            s.vy = -Math.abs(s.vy);
+                        } else {
+                            s.y = noFly.y + noFly.h + s.r;
+                            s.vy = Math.abs(s.vy);
+                        }
                     }
                 }
                 drawConstellations();
-                requestAnimationFrame(animate);
+                rafRef.current = requestAnimationFrame(animate);
             }
             drawConstellations();
-            animate();
+            rafRef.current = requestAnimationFrame(animate);
             const handleResize = {
                 "BackgroundNight.useEffect.handleResize": ()=>{
                     resizeCanvas();
+                    updateNoFly();
                     drawConstellations();
                 }
             }["BackgroundNight.useEffect.handleResize"];
+            const ro = new ResizeObserver(handleResize);
+            ro.observe(parent);
             window.addEventListener('resize', handleResize);
             return ({
-                "BackgroundNight.useEffect": ()=>window.removeEventListener('resize', handleResize)
+                "BackgroundNight.useEffect": ()=>{
+                    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+                    ro.disconnect();
+                    window.removeEventListener('resize', handleResize);
+                }
             })["BackgroundNight.useEffect"];
         }
     }["BackgroundNight.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative w-full min-h-screen overflow-hidden",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
-                ref: canvasRef,
-                className: "absolute inset-0 -z-10 w-full h-full"
-            }, void 0, false, {
-                fileName: "[project]/app/components/BackgroundNight.tsx",
-                lineNumber: 217,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative z-10",
-                children: children
-            }, void 0, false, {
-                fileName: "[project]/app/components/BackgroundNight.tsx",
-                lineNumber: 221,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+        className: "absolute inset-0 -z-10",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
+            ref: canvasRef,
+            className: "absolute inset-0 w-full h-full"
+        }, void 0, false, {
+            fileName: "[project]/app/components/BackgroundNight.tsx",
+            lineNumber: 277,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/app/components/BackgroundNight.tsx",
-        lineNumber: 216,
+        lineNumber: 276,
         columnNumber: 5
     }, this);
 }
-_s(BackgroundNight, "UJgi7ynoup7eqypjnwyX/s32POg=");
+_s(BackgroundNight, "6iViuhYzYlm4tmNfBBzgjqV3lJ8=");
 _c = BackgroundNight;
 var _c;
 __turbopack_context__.k.register(_c, "BackgroundNight");
@@ -2045,8 +2143,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var _s = __turbopack_context__.k.signature();
 'use client';
 ;
-function BackgroundDay(param) {
-    let { children } = param;
+function BackgroundDay() {
     _s();
     const canvasRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -2087,28 +2184,18 @@ function BackgroundDay(param) {
         }
     }["BackgroundDay.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative w-full min-h-screen overflow-hidden",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
-                ref: canvasRef,
-                className: "absolute inset-0 -z-10 w-full h-full"
-            }, void 0, false, {
-                fileName: "[project]/app/components/BackgroundDay.tsx",
-                lineNumber: 56,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative z-10",
-                children: children
-            }, void 0, false, {
-                fileName: "[project]/app/components/BackgroundDay.tsx",
-                lineNumber: 60,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+        className: "absolute inset-0 -z-10",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
+            ref: canvasRef,
+            className: "absolute inset-0 w-full h-full"
+        }, void 0, false, {
+            fileName: "[project]/app/components/BackgroundDay.tsx",
+            lineNumber: 52,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/app/components/BackgroundDay.tsx",
-        lineNumber: 55,
+        lineNumber: 51,
         columnNumber: 5
     }, this);
 }
@@ -2137,21 +2224,59 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Backgro
 ;
 function Background(param) {
     let { children, theme } = param;
-    if (theme === 'night') {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$BackgroundNight$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-            children: children
-        }, void 0, false, {
-            fileName: "[project]/app/components/Background.tsx",
-            lineNumber: 14,
-            columnNumber: 12
-        }, this);
-    }
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$BackgroundDay$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-        children: children
-    }, void 0, false, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "relative",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 -z-10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-0 transition-opacity duration-500 ".concat(theme === 'night' ? 'opacity-100' : 'opacity-0 pointer-events-none'),
+                        "aria-hidden": theme !== 'night',
+                        role: "presentation",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$BackgroundNight$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                            fileName: "[project]/app/components/Background.tsx",
+                            lineNumber: 25,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/Background.tsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-0 transition-opacity duration-500 ".concat(theme === 'day' ? 'opacity-100' : 'opacity-0 pointer-events-none'),
+                        "aria-hidden": theme !== 'day',
+                        role: "presentation",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$BackgroundDay$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                            fileName: "[project]/app/components/Background.tsx",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/Background.tsx",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/components/Background.tsx",
+                lineNumber: 16,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative",
+                children: children
+            }, void 0, false, {
+                fileName: "[project]/app/components/Background.tsx",
+                lineNumber: 41,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/app/components/Background.tsx",
-        lineNumber: 16,
-        columnNumber: 10
+        lineNumber: 14,
+        columnNumber: 5
     }, this);
 }
 _c = Background;

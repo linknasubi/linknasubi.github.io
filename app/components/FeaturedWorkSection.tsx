@@ -28,39 +28,17 @@ interface FeaturedWork {
 }
 
 interface FeaturedWorksSectionProps {
-  title: string; // Ex: 'Trabalhos em Destaque' ou 'Featured Projects'
+  title: string;
   works: FeaturedWork[];
+  lang?: Lang;
+  UI: UIMap;  
 }
 
 type Lang = 'pt' | 'en';
+type UIMap = Record<Lang, Record<string, string>>;
 
-const L: Record<Lang, Record<string, string>> = {
-  pt: {
-    seeMore: 'Ver mais',
-    seeLess: 'Ver menos',
-    studyPage: 'Página do estudo',
-    problem: 'Problema',
-    context: 'Contexto',
-    solution: 'Solução & Arquitetura',
-    tools: 'Ferramentas & Integrações',
-    testimonials: 'O que dizem nossos clientes',
-    caseSuffix: ' — Case',
-  },
-  en: {
-    seeMore: 'See more',
-    seeLess: 'See less',
-    studyPage: 'Case page',
-    problem: 'Problem',
-    context: 'Context',
-    solution: 'Solution & Architecture',
-    tools: 'Tools & Integrations',
-    testimonials: 'What our clients say',
-    caseSuffix: ' — Case',
-  },
-};
-
-export function FeaturedWorksSection({ title, works, lang = 'pt' }: FeaturedWorksSectionProps & { lang?: Lang }) {
-  // controla quais índices estão expandidos
+export function FeaturedWorksSection({ title, works, lang, UI }: FeaturedWorksSectionProps) {
+  const [currentLang, setCurrentLang] = useState<Lang>(lang ?? 'pt');
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
   const toggle = useCallback((idx: number) => {
     setExpanded(prev => {
@@ -70,6 +48,11 @@ export function FeaturedWorksSection({ title, works, lang = 'pt' }: FeaturedWork
       return next;
     });
   }, []);
+
+  React.useEffect(() => {
+    setCurrentLang(lang ?? 'pt');
+  }, [lang]);
+
 
   return (
     <section className="w-full bg-[#18191d] rounded-2xl mt-10 mb-6 px-2 sm:px-6 md:px-12 py-10">
@@ -131,7 +114,7 @@ export function FeaturedWorksSection({ title, works, lang = 'pt' }: FeaturedWork
                       aria-expanded={expanded.has(i)}
                       aria-controls={`case-study-inline-${i}`}
                     >
-                      {expanded.has(i) ? L[lang].seeLess : L[lang].seeMore}
+                      {expanded.has(i) ? UI[currentLang].seeLess : UI[currentLang].seeMore}
                     </button>
 
                     {work.caseStudy.link && (
@@ -141,7 +124,7 @@ export function FeaturedWorksSection({ title, works, lang = 'pt' }: FeaturedWork
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {L[lang].studyPage}
+                        {UI[currentLang].studyPage}
                       </a>
                     )}
 
@@ -150,14 +133,16 @@ export function FeaturedWorksSection({ title, works, lang = 'pt' }: FeaturedWork
               </div>
             </article>
 
-          {/* Passar lang para o detalhe inline */}
+          {/* Passar currentLang para o detalhe inline */}
           {work.caseStudy && (
             <CaseStudyInline
               id={`case-study-inline-${i}`}
               work={work as FeaturedWork & { caseStudy: CaseStudy }}
               expanded={expanded.has(i)}
-              lang={lang}
+              lang={currentLang}
+              UI={UI}                         // ✅ passar adiante
             />
+
           )}
 
 
@@ -169,112 +154,113 @@ export function FeaturedWorksSection({ title, works, lang = 'pt' }: FeaturedWork
 }
 
 
+// + adicione UI no tipo das props
 function CaseStudyInline({
   id,
   work,
   expanded,
   variant = 'highlight',
   lang = 'pt',
+  UI,                    // ✅ novo
 }: {
   id: string;
   work: FeaturedWork & { caseStudy: CaseStudy };
   expanded: boolean;
   variant?: 'highlight' | 'rail' | 'timeline' | 'cards';
   lang?: Lang;
+  UI: UIMap;            // ✅ novo
 }) {
   const cs = work.caseStudy;
 
+  const [currentLang, setCurrentLang] = useState<Lang>(lang ?? 'pt');
+  React.useEffect(() => setCurrentLang(lang ?? 'pt'), [lang]);
+
+  // (opcional) helper para não repetir:
+  const T = UI[currentLang]; // ✅ novo
+
 const renderHighlight = () => (
-<div className="space-y-8">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="space-y-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section>
+        <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{T.problem}</h5>   {/* ✅ */}
+        <p className="text-zinc-200 mt-2">{cs.problem}</p>
+      </section>
+
+      {cs.context && (
+        <section>
+          <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{T.context}</h5> {/* ✅ */}
+          <p className="text-zinc-200 mt-2">{cs.context}</p>
+        </section>
+      )}
+    </div>
+
     <section>
-      <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].problem}</h5>
-      <p className="text-zinc-200 mt-2">{cs.problem}</p>
+      <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{T.solution}</h5>     {/* ✅ */}
+      <p className="text-zinc-200 mt-2">{cs.solution}</p>
     </section>
 
-    {cs.context && (
+    <section>
+      <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{T.tools}</h5>        {/* ✅ */}
+      <div className="mt-3 flex flex-wrap gap-2">
+        {cs.tools.map((t, i) => (
+          <span key={i} className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded">
+            {t}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    {cs.testimonial && (
       <section>
-        <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].context}</h5>
-        <p className="text-zinc-200 mt-2">{cs.context}</p>
+        <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{T.testimonials}</h5> {/* ✅ */}
+        <blockquote className="mt-3 p-4 bg-[#0f1115] border border-zinc-700/70 rounded-lg italic text-zinc-300">
+          “{cs.testimonial.quote}”
+          <footer className="mt-2 text-sm text-yellow-300">— {cs.testimonial.author}</footer>
+        </blockquote>
       </section>
     )}
+
+    {cs.link && (
+      <div>
+        <a
+          href={cs.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition"
+        >
+          {T.seeMore} {/* ✅ */}
+        </a>
+      </div>
+    )}
   </div>
-
-  <section>
-    <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].solution}</h5>
-    <p className="text-zinc-200 mt-2">{cs.solution}</p>
-  </section>
-
-  <section>
-    <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].tools}</h5>
-    <div className="mt-3 flex flex-wrap gap-2">
-      {cs.tools.map((t, i) => (
-        <span key={i} className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded">
-          {t}
-        </span>
-      ))}
-    </div>
-  </section>
-
-  {cs.testimonial && (
-    <section>
-      <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].testimonials}</h5>
-      <blockquote className="mt-3 p-4 bg-[#0f1115] border border-zinc-700/70 rounded-lg italic text-zinc-300">
-        “{cs.testimonial.quote}”
-        <footer className="mt-2 text-sm text-yellow-300">— {cs.testimonial.author}</footer>
-      </blockquote>
-    </section>
-  )}
-
-  {cs.link && (
-    <div>
-      <a
-        href={cs.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition"
-      >
-        {L[lang].seeMore}
-      </a>
-    </div>
-  )}
-</div>
 );
 
+const renderRail = () => (
+  <div className="space-y-8">
+    <RailNode title={`${T.problem} & ${T.context}`} content={cs.problem} index={0} />    {/* ✅ */}
+    <RailNode title={T.solution} content={cs.solution} index={1} />                      {/* ✅ */}
+    <RailTools tools={cs.tools} index={2} lang={currentLang} UI={UI} />                  {/* ✅ */}
+    {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} lang={currentLang} UI={UI} />} {/* ✅ */}
+    {cs.link && <CaseStudyLink link={cs.link} lang={currentLang} UI={UI} />}             {/* ✅ */}
+  </div>
+);
 
-  const renderRail = () => (
-    <div className="space-y-8">
-    <RailNode title={`${L[lang].problem} & ${L[lang].context}`} content={cs.problem} index={0} />
-    <RailNode title={L[lang].solution} content={cs.solution} index={1} />
-    <RailTools tools={cs.tools} index={2} lang={lang} />
-      {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} lang={lang} />}
-
-      {cs.link && <CaseStudyLink link={cs.link} lang={lang} />}
-
-    </div>
-  );
-
-  const renderTimeline = () => (
-    <ol className="relative border-l border-yellow-400/40 ml-3 space-y-6">
-      <TimelineItem title="Problema & Contexto" content={cs.problem} />
-      <TimelineItem title="Solução & Arquitetura" content={cs.solution} />
-      <TimelineTools tools={cs.tools} />
-      {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} />}
-      {cs.link && <CaseStudyLink link={cs.link} lang={lang} />}
-
-    </ol>
-  );
-
-  const renderCards = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <CardItem title="Problema & Contexto" content={cs.problem} />
-      <CardItem title="Solução & Arquitetura" content={cs.solution} />
-      <CardTools tools={cs.tools} />
-      {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} />}
-      {cs.link && <CaseStudyLink link={cs.link} lang={lang} />}
-
-    </div>
-  );
+const renderTimeline = () => (
+  <ol className="relative border-l border-yellow-400/40 ml-3 space-y-6">
+    <TimelineItem title={`${T.problem} & ${T.context}`} content={cs.problem} />           {/* ✅ */}
+    <TimelineItem title={T.solution} content={cs.solution} />                            {/* ✅ */}
+    <TimelineTools tools={cs.tools} lang={currentLang} UI={UI} />                         {/* ✅ */}
+    {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} lang={currentLang} UI={UI} />} {/* ✅ */}
+  </ol>
+);
+const renderCards = () => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <CardItem title={`${T.problem} & ${T.context}`} content={cs.problem} />               {/* ✅ */}
+    <CardItem title={T.solution} content={cs.solution} />                                 {/* ✅ */}
+    <CardTools tools={cs.tools} lang={currentLang} UI={UI} />                              {/* ✅ */}
+    {cs.testimonial && <TestimonialBlock testimonial={cs.testimonial} lang={currentLang} UI={UI} />} {/* ✅ */}
+  </div>
+);
 
   return (
     <div
@@ -291,9 +277,9 @@ const renderHighlight = () => (
           )}
           <div className={`p-6 ${expanded ? 'animate-[fadeSlideIn_420ms_ease-out]' : ''}`}>
             <div className="mb-5">
-              <h4 className="text-zinc-100 font-semibold tracking-tight">
-                {work.title}{L[lang].caseSuffix}
-              </h4>
+            <h4 className="text-zinc-100 font-semibold tracking-tight">
+              {work.title}{T.caseSuffix} {/* ✅ */}
+            </h4>
             </div>
             {variant === 'highlight' && renderHighlight()}
             {variant === 'rail' && renderRail()}
@@ -319,13 +305,16 @@ const RailNode = ({ title, content, index }: { title: string; content: string; i
   </div>
 );
 
-const RailTools = ({ tools, index, lang = 'pt' }: { tools: string[]; index: number; lang?: Lang }) => (
+const RailTools = ({ tools, index, lang = 'pt', UI }: {
+  tools: string[];
+  index: number;
+  lang?: Lang;
+  UI: UIMap;            // ✅ novo
+}) => (
   <div className="relative ml-10">
-    <div
-      className={`absolute -left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-yellow-300 shadow-[0_0_16px_2px_rgba(234,179,8,0.45)]`}
-      style={{ animation: `pulse ${2.6 + index * 0.2}s ease-in-out infinite` }}
-    />
-    <h5 className="text-yellow-300 font-semibold text-sm">{L[lang].tools}</h5>
+    <div className="absolute -left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-yellow-300 shadow-[0_0_16px_2px_rgba(234,179,8,0.45)]"
+         style={{ animation: `pulse ${2.6 + index * 0.2}s ease-in-out infinite` }} />
+    <h5 className="text-yellow-300 font-semibold text-sm">{UI[lang].tools}</h5> {/* ✅ */}
     <div className="mt-2 flex flex-wrap gap-2">
       {tools.map((t, i) => (
         <span key={i} className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded">
@@ -336,15 +325,16 @@ const RailTools = ({ tools, index, lang = 'pt' }: { tools: string[]; index: numb
   </div>
 );
 
-const CaseStudyLink = ({ link, lang = 'pt' }: { link: string; lang?: Lang }) => (
+// CaseStudyLink
+const CaseStudyLink = ({ link, lang = 'pt', UI }: {
+  link: string;
+  lang?: Lang;
+  UI: UIMap;            // ✅ novo
+}) => (
   <div className="mt-2">
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition"
-    >
-      {L[lang].seeMore}
+    <a href={link} target="_blank" rel="noopener noreferrer"
+       className="inline-block px-4 py-2 rounded-md bg-yellow-300 text-black font-semibold hover:brightness-95 transition">
+      {UI[lang].seeMore} {/* ✅ */}
     </a>
   </div>
 );
@@ -357,11 +347,14 @@ const TimelineItem = ({ title, content }: { title: string; content: string }) =>
     <p className="text-zinc-200 mt-1">{content}</p>
   </li>
 );
-
-const TimelineTools = ({ tools, lang = 'pt' }: { tools: string[]; lang?: Lang }) => (
+const TimelineTools = ({ tools, lang = 'pt', UI }: {
+  tools: string[];
+  lang?: Lang;
+  UI: UIMap;            // ✅ novo
+}) => (
   <li className="ml-4">
     <div className="absolute -left-[9px] w-4 h-4 bg-yellow-300 rounded-full border border-yellow-200"></div>
-    <h5 className="text-yellow-300 font-semibold">{L[lang].tools}</h5>
+    <h5 className="text-yellow-300 font-semibold">{UI[lang].tools}</h5> {/* ✅ */}
     <div className="mt-2 flex flex-wrap gap-2">
       {tools.map((t, i) => (
         <span key={i} className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded">
@@ -372,10 +365,14 @@ const TimelineTools = ({ tools, lang = 'pt' }: { tools: string[]; lang?: Lang })
   </li>
 );
 
-
-const TestimonialBlock = ({ testimonial, lang = 'pt' }: { testimonial: NonNullable<CaseStudy['testimonial']>; lang?: Lang }) => (
+// TestimonialBlock
+const TestimonialBlock = ({ testimonial, lang = 'pt', UI }: {
+  testimonial: NonNullable<CaseStudy['testimonial']>;
+  lang?: Lang;
+  UI: UIMap;            // ✅ novo
+}) => (
   <section className="mt-2">
-    <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{L[lang].testimonials}</h5>
+    <h5 className="text-yellow-300 font-semibold text-sm tracking-wide">{UI[lang].testimonials}</h5> {/* ✅ */}
     <blockquote className="mt-3 p-4 bg-[#0f1115] border border-zinc-700/70 rounded-lg italic text-zinc-300">
       {testimonial.quote ? `“${testimonial.quote}”` : '“Excelente experiência e resultados além do esperado.”'}
       <footer className="mt-2 text-sm text-yellow-300">— {testimonial.author ?? (lang === 'pt' ? 'Cliente' : 'Client')}</footer>
@@ -394,9 +391,14 @@ const CardItem = ({ title, content }: { title: string; content: string }) => (
   </div>
 );
 
-const CardTools = ({ tools }: { tools: string[] }) => (
+// CardTools — header dinâmico por idioma
+const CardTools = ({ tools, lang = 'pt', UI }: {
+  tools: string[];
+  lang?: Lang;
+  UI: UIMap;            // ✅ novo
+}) => (
   <div className="bg-[#0f1115] border border-zinc-800/80 rounded-lg p-4">
-    <h5 className="text-yellow-300 font-semibold mb-2">Ferramentas & Integrações</h5>
+    <h5 className="text-yellow-300 font-semibold mb-2">{UI[lang].tools}</h5> {/* ✅ */}
     <div className="mt-2 flex flex-wrap gap-2">
       {tools.map((t, i) => (
         <span key={i} className="bg-[#171b22] border border-slate-600/30 text-slate-200 text-[11px] font-mono px-2 py-1 rounded">
@@ -406,7 +408,6 @@ const CardTools = ({ tools }: { tools: string[] }) => (
     </div>
   </div>
 );
-
 
 function PeriodBadge({ period }: { period: string }) {
   // usa en-dash e evita quebra de linha dentro do chip

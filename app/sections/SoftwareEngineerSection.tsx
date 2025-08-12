@@ -381,7 +381,9 @@ testimonial: {
 ];
 
 
-export default function SoftwareEngineerSection({ lang = 'pt' }: SoftwareEngineerSectionProps) {
+type UIMap = Record<Lang, Record<string, string>>;
+
+export default function SoftwareEngineerSection({ lang, UI }: { lang: Lang; UI: UIMap }) {
   const textContent = lang === 'pt' ? aboutMePT : aboutMeEN;
   const featuredWorks = lang === 'pt' ? featuredWorksPT : featuredWorksEN;
   const sectionTitle = lang === 'pt' ? "Trabalhos em Destaque" : "Featured Projects";
@@ -396,8 +398,10 @@ export default function SoftwareEngineerSection({ lang = 'pt' }: SoftwareEnginee
         timeline={timeline}
       />
       <FeaturedWorksSection
-        title={sectionTitle}
+        title="Trabalhos em Destaque"
         works={featuredWorks}
+        lang={lang}
+        UI={UI}
       />
     </>
   );

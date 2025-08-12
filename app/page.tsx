@@ -7,21 +7,50 @@ import SoftwareEngineerSection from './sections/SoftwareEngineerSection';
 import Background from './components/Background';
 import { Code2, BarChart3 } from "lucide-react";
 
+
+type Lang = 'pt' | 'en';
+
+// 👇 Novo: dicionário UI centralizado na page
+const UI: Record<Lang, Record<string, string>> = {
+  pt: {
+    seeMore: 'Ver mais',
+    seeLess: 'Ver menos',
+    studyPage: 'Página do estudo',
+    problem: 'Problema',
+    context: 'Contexto',
+    solution: 'Solução & Arquitetura',
+    tools: 'Ferramentas & Integrações',
+    testimonials: 'Relatos',
+    caseSuffix: ' — Case',
+  },
+  en: {
+    seeMore: 'See more',
+    seeLess: 'See less',
+    studyPage: 'Case page',
+    problem: 'Problem',
+    context: 'Context',
+    solution: 'Solution & Architecture',
+    tools: 'Tools & Integrations',
+    testimonials: 'Reports',
+    caseSuffix: ' — Case',
+  },
+};
+
 export default function HomePage() {
   const [section, setSection] = useState<'data' | 'software'>('software');
   const [theme, setTheme] = useState<'day' | 'night'>('night');
-  const [lang, setLang] = useState<'pt' | 'en'>('pt');
+  const [lang, setLang] = useState<Lang>('pt');
 
   const renderSection = () => {
     switch (section) {
       case 'software':
-        return <SoftwareEngineerSection lang={lang} />;
+        // 👇 Passa UI adiante
+        return <SoftwareEngineerSection lang={lang} UI={UI} />;
       case 'data':
       default:
-        return <DataScienceSection lang={lang} />;
+        return <DataScienceSection lang={lang} UI={UI} />;
     }
   };
-
   // Estilos
   const mainBg = theme === 'day'
     ? 'bg-white/80 text-gray-900'

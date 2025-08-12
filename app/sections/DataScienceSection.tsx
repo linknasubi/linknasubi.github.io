@@ -87,7 +87,7 @@ const aboutMeEN = {
 };
 const featuredWorksPT = [
   {
-    img: "/img/highlight-podoclin.png",
+    img: "/software_engineer/logo-podoclin.png",
     alt: "PodoClin - Gestão de Clínicas",
     title: "PodoClin – Gestão de Clínicas de Podologia",
     period: "2024 - Atual",
@@ -148,7 +148,7 @@ const featuredWorksPT = [
     },
   },
   {
-    img: "/img/highlight-mlbio.png",
+    img: "/software_engineer/linc-logo.png",
     alt: "ML para Biotecnologia",
     title: "Classificação de Peptídeos e Visualização de Dados (LINC/UFPA)",
     period: "2020",
@@ -173,7 +173,7 @@ const featuredWorksPT = [
 
 const featuredWorksEN = [
   {
-    img: "/img/highlight-podoclin.png",
+    img: "/software_engineer/logo-podoclin.png",
     alt: "PodoClin - Clinic Management",
     title: "PodoClin – SaaS for Podiatry Clinics",
     period: "2024 - Present",
@@ -189,7 +189,7 @@ const featuredWorksEN = [
     stack: ["Python", "Power BI", "Azure Synapse", "SQL Server", "Scikit-learn"]
   },
   {
-    img: "/img/highlight-mlbio.png",
+    img: "/software_engineer/linc-logo.png",
     alt: "ML for Biotechnology",
     title: "Peptide Classification & Data Visualization (LINC/UFPA)",
     period: "2020",
@@ -198,7 +198,9 @@ const featuredWorksEN = [
   },
 ];
 
-export default function DataScienceSection({ lang = 'pt' }: DataScienceSectionProps) {
+type UIMap = Record<Lang, Record<string, string>>;
+
+export default function DataScienceSection({ lang, UI }: { lang: Lang; UI: UIMap }) {
   // use textos e featured works específicos de Data Science
   const textContent = lang === 'pt' ? aboutMePT : aboutMeEN;
   const featuredWorks = lang === 'pt' ? featuredWorksPT : featuredWorksEN;
@@ -214,8 +216,10 @@ export default function DataScienceSection({ lang = 'pt' }: DataScienceSectionPr
         timeline={timeline ?? timeline}  // se tiver uma timeline própria para DS, use timelineDS
       />
       <FeaturedWorksSection
-        title={sectionTitle}
+        title="Trabalhos em Destaque"
         works={featuredWorks}
+        lang={lang}
+        UI={UI}
       />
     </>
   );

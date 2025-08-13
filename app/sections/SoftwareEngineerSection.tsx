@@ -50,7 +50,7 @@ const aboutMePT = {
   rest: (
     <>
       <p className="mb-4">
-        I am currently the Technical Lead and Co-Founder at iDEV, where I design and develop SaaS products end-to-end, including multi-tenant architecture, dynamic permissioning, and automated deployment using GitHub Actions, Docker, and Kubernetes. I have developed systems for businesses originating from OAB commissions, medical solutions, and B2B platforms.
+        Atualmente, sou Líder Técnico e Co-Fundador na iDEV, onde projeto e desenvolvo produtos SaaS de ponta a ponta, incluindo arquitetura multi-tenant, sistema dinâmico de permissões e implantação automatizada utilizando GitHub Actions, Docker e Kubernetes. Já desenvolvi sistemas para negócios originados de comissões da OAB, soluções médicas e plataformas B2B.
       </p>
 
       <p className="mb-4">

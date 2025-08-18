@@ -17,6 +17,20 @@ module.exports = {
         deepdark: "#131313",
         // Adicione outras cores do seu design system, se desejar
       },
+        animation: {
+        'wipe-up': 'wipe-up 0.8s ease-in-out forwards',
+        'wipe-down': 'wipe-down 0.8s ease-in-out forwards',
+      },
+      keyframes: {
+        'wipe-up': {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0%)' },
+        },
+        'wipe-down': {
+          '0%': { transform: 'translateY(0%)' },
+          '100%': { transform: 'translateY(-100%)' },
+        },
+      },
     },
   },
   plugins: [

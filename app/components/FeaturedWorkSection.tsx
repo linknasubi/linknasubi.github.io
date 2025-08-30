@@ -50,19 +50,33 @@ export function FeaturedWorksSection({ title, works, lang, UI }: FeaturedWorksSe
   }, []);
 
   React.useEffect(() => {
-    setCurrentLang(lang ?? 'pt');
-  }, [lang]);
+      const elements = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target); // só anima 1x
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+  
+      elements.forEach(el => observer.observe(el));
+      return () => observer.disconnect();
+    }, []);
 
 
   return (
-    <section className="w-full bg-[#18191d] rounded-2xl mt-10 mb-6 px-2 sm:px-6 md:px-12 py-10">
+    <section className="w-full bg-[#18191dB3] rounded-2xl mt-10 mb-6 px-2 sm:px-6 md:px-12 py-10">
       <h2 className="text-2xl md:text-3xl font-bold text-yellow-300 mb-10 text-center tracking-tight">
         {title}
       </h2>
 
       <div className="flex flex-col gap-10">
         {works.map((work, i) => (
-          <div key={i} className="flex flex-col gap-4">
+          <div key={i} className="fade-in flex flex-col gap-4">
             <article
               className={`
                 flex flex-col md:flex-row items-stretch bg-[#202128] rounded-xl shadow-lg overflow-hidden

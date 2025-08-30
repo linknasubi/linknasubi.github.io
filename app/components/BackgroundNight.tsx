@@ -59,10 +59,6 @@ export default function BackgroundNight() {
     }
     updateNoFly();
 
-    function insideNoFly(x: number, y: number) {
-      return x >= noFly.x && x <= noFly.x + noFly.w && y >= noFly.y && y <= noFly.y + noFly.h;
-    }
-
     const TOTAL_STARS = 120;
     const STAR_RADIUS = [1, 3.5];
     const SPEED = 1.5;
@@ -83,11 +79,6 @@ export default function BackgroundNight() {
         let y = cy + Math.random() * 80 - 40;
         let tries = 0;
 
-        while (insideNoFly(x, y) && tries++ < 20) {
-          x = Math.random() * canvas.width;
-          y = Math.random() * canvas.height;
-        }
-
         stars.push({
           x,
           y,
@@ -106,11 +97,6 @@ export default function BackgroundNight() {
       let x = Math.random() * canvas.width;
       let y = Math.random() * canvas.height;
       let tries = 0;
-
-      while (insideNoFly(x, y) && tries++ < 20) {
-        x = Math.random() * canvas.width;
-        y = Math.random() * canvas.height;
-      }
 
       stars.push({
         x,
@@ -209,19 +195,6 @@ function drawConstellations() {
           if (s.y < s.r || s.y > canvas!.height - s.r) s.vy *= -1;
           s.x = cx + (s.x - cx) * scale;
           s.y = cy + (s.y - cy) * scale;
-          // depois dos limites do canvas:
-          if (insideNoFly(s.x, s.y)) {
-            const left = Math.abs(s.x - noFly.x);
-            const right = Math.abs(s.x - (noFly.x + noFly.w));
-            const top = Math.abs(s.y - noFly.y);
-            const bottom = Math.abs(s.y - (noFly.y + noFly.h));
-            const min = Math.min(left, right, top, bottom);
-            if (min === left) { s.x = noFly.x - s.r; s.vx = -Math.abs(s.vx); }
-            else if (min === right) { s.x = noFly.x + noFly.w + s.r; s.vx = Math.abs(s.vx); }
-            else if (min === top) { s.y = noFly.y - s.r; s.vy = -Math.abs(s.vy); }
-            else { s.y = noFly.y + noFly.h + s.r; s.vy = Math.abs(s.vy); }
-          }
-
         }
       }
 
@@ -231,18 +204,6 @@ function drawConstellations() {
         s.y += s.vy;
         if (s.x < s.r || s.x > canvas!.width - s.r) s.vx *= -1;
         if (s.y < s.r || s.y > canvas!.height - s.r) s.vy *= -1;
-
-        if (insideNoFly(s.x, s.y)) {
-          const left = Math.abs(s.x - noFly.x);
-          const right = Math.abs(s.x - (noFly.x + noFly.w));
-          const top = Math.abs(s.y - noFly.y);
-          const bottom = Math.abs(s.y - (noFly.y + noFly.h));
-          const min = Math.min(left, right, top, bottom);
-          if (min === left) { s.x = noFly.x - s.r; s.vx = -Math.abs(s.vx); }
-          else if (min === right) { s.x = noFly.x + noFly.w + s.r; s.vx = Math.abs(s.vx); }
-          else if (min === top) { s.y = noFly.y - s.r; s.vy = -Math.abs(s.vy); }
-          else { s.y = noFly.y + noFly.h + s.r; s.vy = Math.abs(s.vy); }
-        }
 
       }
       

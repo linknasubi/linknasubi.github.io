@@ -13,6 +13,14 @@ interface TimelineItem {
 interface ProfileIntroSectionProps {
   intro: React.ReactNode;
   rest: React.ReactNode;
+    skills: {
+    labels: {
+      skills: string; hard: string; soft: string;
+      groups: Record<string, string>;
+    };
+    hard: Record<string, string[]>;
+    soft: Record<string, string[]>;  
+  };
   profileImg: string;
   profileAlt: string;
   timeline: TimelineItem[];
@@ -21,12 +29,34 @@ interface ProfileIntroSectionProps {
 export function ProfileIntroSection({
   intro,
   rest,
+  skills,
   profileImg,
   profileAlt,
   timeline,
 }: ProfileIntroSectionProps) {
+
+      React.useEffect(() => {
+      const elements = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target); // só anima 1x
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+  
+      elements.forEach(el => observer.observe(el));
+      return () => observer.disconnect();
+    }, []);
+
+
   return (
-    <section className="w-full bg-[#151414] rounded-2xl">
+    <section className="w-full bg-[#151414B3] rounded-2xl">
+
       {/* Intro + Imagem */}
       <div className="flex flex-col md:flex-row items-start gap-4 sm:gap-8 md:gap-16">
         {/* Texto intro (coluna esquerda) */}
@@ -47,11 +77,72 @@ export function ProfileIntroSection({
         </div>
       </div>
       {/* Texto detalhado abaixo */}
-      <div className="w-full px-4 sm:px-8 md:px-20 pb-2 text-gray-300 text-base sm:text-lg">
+      <div className="fade-in w-full px-4 sm:px-8 md:px-20 pb-2 text-gray-300 text-base sm:text-lg">
         {rest}
       </div>
+
+<div className="flex flex-col gap-6 items-center w-full">
+  {/* Soft Skills */}
+  <div className="w-full max-w-3xl rounded-xl p-4 border border-white/10 bg-white/[0.04]">
+    <h4 className="text-base font-semibold mb-3 text-gray-100 text-center">
+      {skills.labels.soft}
+    </h4>
+    <ul className="space-y-3">
+      {['collaboration','leadership','communication','languages']
+        .filter((key) => key in skills.soft)
+        .map((key) => (
+          <li key={key} className="text-center">
+            <p className="text-xs uppercase tracking-wide opacity-70 mb-1">
+              {skills.labels.groups[key] ?? key}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {skills.soft[key].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border border-white/10 text-gray-100 bg-white/[0.03]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Hard Skills */}
+  <div className="w-full max-w-3xl rounded-xl p-4 border border-white/10 bg-white/[0.04]">
+    <h4 className="text-base font-semibold mb-3 text-gray-100 text-center">
+      {skills.labels.hard}
+    </h4>
+    <ul className="space-y-3">
+      {['programming','frameworks','ecommerce','tooling','devops','databases','dataModeling']
+        .filter((key) => key in skills.hard)
+        .map((key) => (
+          <li key={key} className="text-center">
+            <p className="text-xs uppercase tracking-wide opacity-70 mb-1">
+              {skills.labels.groups[key] ?? key}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {skills.hard[key].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border border-white/10 text-gray-100 bg-white/[0.03]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+
+
       {/* Timeline */}
-      <div className="w-full flex flex-wrap justify-center gap-5 sm:gap-8 mt-4 pb-6">
+      <div className="fade-in w-full flex flex-wrap justify-center gap-5 sm:gap-8 mt-4 pb-6">
         {timeline.map((item, i) => (
           <div key={i} className="flex flex-col items-center mb-2">
               <Image

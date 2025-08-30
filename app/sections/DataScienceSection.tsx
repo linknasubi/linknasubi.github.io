@@ -11,6 +11,54 @@ interface DataScienceSectionProps {
   lang: Lang;
 }
 
+// NEW — Data Science Skills (baseado no seu CV)
+const dsHardSkills = {
+  programming: ['Python', 'SQL', 'JavaScript (React, Node.js)'],
+  frameworks: ['Pandas', 'NumPy', 'Scikit-learn', 'PyTorch (básico)', 'Matplotlib', 'Seaborn', 'Flask', 'Django', 'React', 'Next.js', 'Tailwind CSS'],
+  analytics: ['Power BI (DAX, dashboards)', 'Excel (pivot, fórmulas)', 'Data Visualization', 'Time-Series Analysis', 'Machine Learning', 'Azure ML', 'Jupyter'],
+  devops: ['Docker', 'Kubernetes', 'GitHub Actions', 'CI/CD', 'DigitalOcean', 'Prometheus', 'Grafana'],
+  databases: ['SQL Server', 'MySQL', 'MongoDB'],
+  dataModeling: ['Star Schema', 'Snowflake Schema', 'Data Pipelines', 'ETL (Power Query, Azure Synapse)'],
+};
+
+const dsSoftSkills = {
+  collaboration: ['Agile (Scrum/Kanban)', 'Cross-functional teamwork'],
+  communication: ['Tech ↔ Non-Tech Communication', 'Prioritization', 'Change Management'],
+  detail: ['Attention to Detail', 'Analytical Thinking'],
+  languages: ['Portuguese (Native)', 'English (Fluent)'],
+};
+
+// i18n básico
+const dsSkillsLabels = {
+  pt: { skills: 'Skills', hard: 'Hard Skills', soft: 'Soft Skills',
+    groups: {
+      programming: 'Programação & Scripting',
+      frameworks: 'Frameworks & Bibliotecas',
+      analytics: 'Analytics & Data Science',
+      devops: 'DevOps & Cloud',
+      databases: 'Bancos de Dados',
+      dataModeling: 'Modelagem & Pipelines de Dados',
+      collaboration: 'Colaboração',
+      communication: 'Comunicação',
+      detail: 'Detalhes & Pensamento Analítico',
+      languages: 'Idiomas',
+    } },
+  en: { skills: 'Skills', hard: 'Hard Skills', soft: 'Soft Skills',
+    groups: {
+      programming: 'Programming & Scripting',
+      frameworks: 'Frameworks & Libraries',
+      analytics: 'Analytics & Data Science',
+      devops: 'DevOps & Cloud',
+      databases: 'Databases',
+      dataModeling: 'Data Modeling & Pipelines',
+      collaboration: 'Collaboration',
+      communication: 'Communication',
+      detail: 'Attention to Detail & Analytical Thinking',
+      languages: 'Languages',
+    } },
+};
+
+
 const timeline = [
     {
     img: "/software_engineer/linc-logo.png",
@@ -27,13 +75,13 @@ const timeline = [
     {
     img: "/software_engineer/idev-logo.png",
     alt: "iDEV",
-    year: "2023 - Atual",
+    year: "2023 - 2025",
   },
 
   {
     img: "/software_engineer/logo-podoclin.png",
     alt: "iDEV",
-    year: "2024 - Atual",
+    year: "2024 - 2025",
   },
 ];
 
@@ -151,7 +199,7 @@ const featuredWorksPT = [
     img: "/software_engineer/linc-logo.png",
     alt: "ML para Biotecnologia",
     title: "Classificação de Peptídeos e Visualização de Dados (LINC/UFPA)",
-    period: "2020",
+    period: "2019 - 2020",
     description:
       "Pesquisador em machine learning no LINC/UFPA: desenvolvi modelos de redes neurais para classificar peptídeos penetrantes de célula (CPPs) e integrei a inferência em tempo real a uma aplicação web pública para pesquisadores. Também criei um framework interativo para visualização de algoritmos de redução de dimensionalidade (PCA, t-SNE, UMAP), permitindo análise visual de dados biológicos complexos.",
     stack: ["Python", "Scikit-learn", "Django", "React", "Power BI"],
@@ -176,7 +224,7 @@ const featuredWorksEN = [
     img: "/software_engineer/logo-podoclin.png",
     alt: "PodoClin - Clinic Management",
     title: "PodoClin – SaaS for Podiatry Clinics",
-    period: "2024 - Present",
+    period: "2024 - 2025",
     description: "Spearheaded the transformation of iDEV’s analytics by designing and implementing a scalable star schema model, turning fragmented product and behavioral data into a centralized, query-efficient BI architecture. Engineered analytics workflows in a Kubernetes infrastructure, implemented real-time ingestion and anomaly detection pipelines, and mapped the customer lifecycle to expose churn points and optimize onboarding and retention.",
     stack: ["Node.js", "Next.js", "MongoDB", "Kubernetes", "Python", "Power BI"]
   },
@@ -192,7 +240,7 @@ const featuredWorksEN = [
     img: "/software_engineer/linc-logo.png",
     alt: "ML for Biotechnology",
     title: "Peptide Classification & Data Visualization (LINC/UFPA)",
-    period: "2020",
+    period: "2019 - 2020",
     description: "Researcher in machine learning at LINC/UFPA: developed neural network models to classify cell-penetrating peptides (CPPs) and integrated real-time inference into a public web app for researchers. Also created an interactive framework for dimensionality reduction algorithms (PCA, t-SNE, UMAP), enabling visual analysis of complex biological data.",
     stack: ["Python", "Scikit-learn", "Django", "React", "Power BI"]
   },
@@ -206,15 +254,18 @@ export default function DataScienceSection({ lang, UI }: { lang: Lang; UI: UIMap
   const featuredWorks = lang === 'pt' ? featuredWorksPT : featuredWorksEN;
   const sectionTitle = lang === 'pt' ? "Trabalhos em Destaque" : "Featured Projects";
 
+  const sectionSkills = lang === 'pt' ? dsSkillsLabels.pt : dsSkillsLabels.en;
   return (
     <>
       <ProfileIntroSection
         intro={textContent.intro}
         rest={textContent.rest}
+        skills={{ labels: sectionSkills, hard: dsHardSkills, soft: dsSoftSkills }}
         profileImg="/profile_picture.png"
         profileAlt="Gabriel Aragão"
-        timeline={timeline ?? timeline}  // se tiver uma timeline própria para DS, use timelineDS
+        timeline={timeline ?? timeline}
       />
+
       <FeaturedWorksSection
         title="Trabalhos em Destaque"
         works={featuredWorks}

@@ -10,6 +10,59 @@ interface SoftwareEngineerSectionProps {
   lang: Lang;
 }
 
+
+// NEW — Skills (baseado no seu CV)
+const hardSkills = {
+  programming: ['TypeScript', 'JavaScript (Node.js, React)', 'Java', 'Python (Django, Flask)', 'SQL'],
+  frameworks: ['React', 'Next.js', 'Remix', 'Hydrogen', 'Express', 'NestJS', 'Flask', 'Django', 'Tailwind CSS', 'Spring Boot'],
+  ecommerce: ['Shopify CLI', 'Liquid templates', 'UI extensions', 'Custom app development', 'CMS (WordPress, Contentful)'],
+  tooling: ['Webpack', 'Vite', 'SASS/LESS', 'Google Analytics', 'GTM', 'Mailchimp', 'Klevu'],
+  devops: ['Docker', 'Kubernetes', 'GitHub Actions', 'GitLab CI/CD', 'CI/CD pipelines', 'DigitalOcean', 'Prometheus', 'Grafana'],
+  databases: ['MongoDB', 'PostgreSQL', 'MySQL', 'SQL Server'],
+  dataModeling: ['Star Schema', 'Snowflake Schema', 'Data migration (Salesforce & legacy)'],
+};
+
+const softSkills = {
+  collaboration: ['Agile (Scrum/Kanban)', 'Cross-functional teamwork', 'Mentorship'],
+  leadership: ['Team coordination', 'Architecture decision-making', 'Ownership of delivery cycles'],
+  communication: ['Clear documentation', 'Async communication', 'Stakeholder alignment'],
+  languages: ['Portuguese (Native)', 'English (Fluent)'],
+};
+
+// NEW — helpers rápidos (i18n básico do cabeçalho)
+const skillsLabels = {
+  pt: { skills: 'Skills', hard: 'Hard Skills', soft: 'Soft Skills',
+        groups: {
+          programming: 'Programação & Scripting',
+          frameworks: 'Frameworks & Bibliotecas',
+          ecommerce: 'eCommerce',
+          tooling: 'Ferramentas & Analytics',
+          devops: 'DevOps & Cloud',
+          databases: 'Bancos de Dados',
+          dataModeling: 'Modelagem & Arquitetura de Dados',
+          collaboration: 'Colaboração',
+          leadership: 'Liderança',
+          communication: 'Comunicação',
+          languages: 'Idiomas',
+        } },
+  en: { skills: 'Skills', hard: 'Hard Skills', soft: 'Soft Skills',
+        groups: {
+          programming: 'Programming & Scripting',
+          frameworks: 'Frameworks & Libraries',
+          ecommerce: 'eCommerce',
+          tooling: 'Tooling & Analytics',
+          devops: 'DevOps & Cloud',
+          databases: 'Databases',
+          dataModeling: 'Data Modeling & Architecture',
+          collaboration: 'Collaboration',
+          leadership: 'Leadership',
+          communication: 'Communication',
+          languages: 'Languages',
+        } },
+};
+
+
+
 const timeline = [
     {
     img: "/software_engineer/linc-logo.png",
@@ -26,13 +79,13 @@ const timeline = [
     {
     img: "/software_engineer/idev-logo.png",
     alt: "iDEV",
-    year: "2023 - Atual",
+    year: "2023 - 2025",
   },
 
   {
     img: "/software_engineer/logo-podoclin.png",
     alt: "iDEV",
-    year: "2024 - Atual",
+    year: "2024 - 2025",
   },
 ];
 
@@ -95,7 +148,7 @@ const featuredWorksPT = [
     img: "/software_engineer/logo-podoclin.png",
     alt: "PodoClin",
     title: "PodoClin – SaaS para Clínicas de Podologia",
-    period: "2024 - Atual",
+    period: "2024 - 2025",
     description:
       "Criação, arquitetura e liderança técnica da plataforma SaaS multi-tenant, incluindo motor de formulários dinâmicos, geração de PDFs, integrações (WhatsApp, Stripe), deploy Kubernetes e interfaces web/mobile responsivas.",
     stack: [
@@ -237,7 +290,7 @@ const featuredWorksEN = [
     img: "/software_engineer/logo-podoclin.png",
     alt: "PodoClin",
     title: "PodoClin – SaaS for Podiatry Clinics",
-    period: "2022 - Present",
+    period: "2024 - 2025",
     description:
       "Created, architected, and led the development of a multi-tenant SaaS platform featuring a dynamic form engine, PDF generation, WhatsApp/Mercado Pago integrations, Kubernetes deployment, and responsive web/mobile interfaces.",
     stack: [
@@ -275,7 +328,7 @@ const featuredWorksEN = [
   img: "/software_engineer/adv-mobile.png",
   alt: "Mobile Systems Development",
   title: "End-to-End Mobile Systems Development",
-  period: "2024",
+  period: "2023 - 2024",
   description:
     "Designed and delivered mobile applications across Android and iOS using cross-platform frameworks, integrating with complex backends, real-time data sync, and multi-environment deployments.",
   stack: [
@@ -344,7 +397,7 @@ testimonial: {
     img: "/software_engineer/linc-logo.png",
     alt: "Modular ML Backend",
     title: "LINC/UFPA – Modular Backend & ML",
-    period: "2020",
+    period: "2019-2020",
     description:
       "Developed modular backend systems in Python (Flask/Django), integrated with Java Spring Boot, Dockerized deployments, and pipelines for ML model serving.",
     stack: [
@@ -387,12 +440,13 @@ export default function SoftwareEngineerSection({ lang, UI }: { lang: Lang; UI: 
   const textContent = lang === 'pt' ? aboutMePT : aboutMeEN;
   const featuredWorks = lang === 'pt' ? featuredWorksPT : featuredWorksEN;
   const sectionTitle = lang === 'pt' ? "Trabalhos em Destaque" : "Featured Projects";
-
+  const sectionSkills = lang === 'pt' ? skillsLabels.pt : skillsLabels.en;
   return (
     <>
       <ProfileIntroSection
         intro={textContent.intro}
         rest={textContent.rest}
+        skills={{ labels: sectionSkills, hard: hardSkills, soft: softSkills }}
         profileImg="/profile_picture.png"
         profileAlt="Gabriel Aragão"
         timeline={timeline}

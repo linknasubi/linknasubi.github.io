@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DataScienceSection from './sections/DataScienceSection';
 // import SecuritySection from './sections/SecuritySection';
 import SoftwareEngineerSection from './sections/SoftwareEngineerSection';
@@ -39,7 +39,22 @@ const UI: Record<Lang, Record<string, string>> = {
 export default function HomePage() {
   const [section, setSection] = useState<'data' | 'software'>('software');
   const [theme, setTheme] = useState<'day' | 'night'>('night');
-  const [lang, setLang] = useState<Lang>('pt');
+  const [lang, setLang] = useState<Lang>('en');
+  const [visits, setVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch("https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://SEUUSUARIO.github.io")
+      .then(res => res.text())
+      .then(svg => {
+        // pega o número dentro do SVG retornado
+        const match = svg.match(/>([0-9]+)<\/text>/);
+        if (match) setVisits(parseInt(match[1], 10));
+      })
+      .catch(err => console.error("Erro ao buscar contador:", err));
+  }, []);
+
+
+
 
 
 const translations = {
@@ -105,9 +120,10 @@ const items = [
     }
   };
   // Estilos
-  const mainBg = theme === 'day'
-    ? 'bg-white/80 text-gray-900'
-    : 'bg-[#131313] text-gray-100';
+const mainBg = theme === 'day'
+  ? 'bg-white/80 text-gray-900'
+  : 'bg-[#131313b3] text-gray-100'
+
 
   const buttonActive = theme === 'day'
     ? 'bg-yellow-300 text-indigo-900 border-yellow-400 shadow-md'
@@ -190,7 +206,7 @@ const items = [
 
         {/* Conteúdo principal centralizado */}
         <main className={`
-          ${mainBg}
+          ${mainBg} bg-opacity-90
           shadow-xl rounded-2xl
           p-3 sm:p-6 md:p-10 lg:p-14
           w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl 2xl:max-w-5xl mx-auto
@@ -204,6 +220,7 @@ const items = [
           </h2>
 
           <div className={`
+          bg-opacity-90
             prose max-w-none text-base sm:text-lg leading-relaxed
             prose-a:no-underline hover:prose-a:underline underline-offset-4
             ${theme === 'day'
@@ -214,7 +231,11 @@ const items = [
           </div>
         </main>
 
-
+        <footer className="mt-10 text-center text-gray-400 text-sm">
+          {visits !== null
+            ? `${visits} people have already checked out my amazing resume`
+            : "Loading curious visitors..."}
+        </footer>
       </div>
     </Background>
   );

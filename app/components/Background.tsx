@@ -12,9 +12,7 @@ interface Props {
 export default function Background({ children, theme }: Props) {
   return (
     <div className="relative">
-      {/* Camada de fundos (sempre montados) */}
       <div className="absolute inset-0 -z-10">
-        {/* Night */}
         <div
           className={`absolute inset-0 transition-opacity duration-500 ${
             theme === 'night' ? 'opacity-100' : 'opacity-0 pointer-events-none'

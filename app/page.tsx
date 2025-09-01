@@ -42,19 +42,6 @@ export default function HomePage() {
   const [lang, setLang] = useState<Lang>('en');
   const [visits, setVisits] = useState<number | null>(null);
 
-  useEffect(() => {
-    fetch("https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://linknasubi.github.io")
-      .then(res => res.text())
-      .then(svg => {
-        // pega o número dentro do SVG retornado
-        const match = svg.match(/>([0-9]+)<\/text>/);
-        if (match) setVisits(parseInt(match[1], 10));
-      })
-      .catch(err => console.error("Erro ao buscar contador:", err));
-  }, []);
-
-
-
 
 
 const translations = {
@@ -232,20 +219,6 @@ const mainBg = theme === 'day'
         </main>
 
 
-
-        <footer className="mt-10 text-center text-gray-400 text-sm">
-
-          <img
-            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gabrielaragao.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false"
-            alt="visit counter"
-            className="mx-auto mt-2"
-          />
-
-
-          {visits !== null
-            ? `${visits} people have already checked out my amazing resume`
-            : "You're one of the first visitors!"}
-        </footer>
 
       </div>
     </Background>

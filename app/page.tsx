@@ -43,7 +43,7 @@ export default function HomePage() {
   const [visits, setVisits] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch("https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://SEUUSUARIO.github.io")
+    fetch("https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://linknasubi.github.io")
       .then(res => res.text())
       .then(svg => {
         // pega o número dentro do SVG retornado
@@ -231,11 +231,22 @@ const mainBg = theme === 'day'
           </div>
         </main>
 
+
+
         <footer className="mt-10 text-center text-gray-400 text-sm">
+
+          <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gabrielaragao.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false"
+            alt="visit counter"
+            className="mx-auto mt-2"
+          />
+
+
           {visits !== null
             ? `${visits} people have already checked out my amazing resume`
-            : "Loading curious visitors..."}
+            : "You're one of the first visitors!"}
         </footer>
+
       </div>
     </Background>
   );

@@ -13,8 +13,8 @@ interface SoftwareEngineerSectionProps {
 
 // NEW — Skills (baseado no seu CV)
 const hardSkills = {
-  programming: ['TypeScript', 'JavaScript (Node.js, React)', 'Java', 'Python (Django, Flask)', 'SQL'],
-  frameworks: ['React', 'Next.js', 'Remix', 'Hydrogen', 'Express', 'NestJS', 'Flask', 'Django', 'Tailwind CSS', 'Spring Boot'],
+  programming: ['PHP', 'TypeScript', 'JavaScript (Node.js, React)', 'Java', 'Python (Django, Flask)', 'SQL'],
+  frameworks: ['Laravel', 'React', 'Next.js', 'Remix', 'Hydrogen', 'Express', 'NestJS', 'Flask', 'Django', 'Tailwind CSS', 'Spring Boot'],
   ecommerce: ['Shopify CLI', 'Liquid templates', 'UI extensions', 'Custom app development', 'CMS (WordPress, Contentful)'],
   tooling: ['Webpack', 'Vite', 'SASS/LESS', 'Google Analytics', 'GTM', 'Mailchimp', 'Klevu'],
   devops: ['Docker', 'Kubernetes', 'GitHub Actions', 'GitLab CI/CD', 'CI/CD pipelines', 'DigitalOcean', 'Prometheus', 'Grafana'],
